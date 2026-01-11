@@ -1,42 +1,112 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>baumes</title>
-    <link rel="stylesheet" href="style.css">
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Roboto:wght@400;500&display=swap" rel="stylesheet">
+  <meta charset="UTF-8">
+  <title>Baumes à Lèvres</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
 </head>
-<body>
-    <header>
-        <nav class="navbar">
-            <div class="logo">Élégance</div>
-            <ul class="nav-links">
-                <li><a href="#accueil">Accueil</a></li>
-                <li><a href="#produits">Produits</a></li>
-                <li><a href="#contact">Contact</a></li>
-            </ul>
-        </nav>
-        <section class="hero" id="accueil">
-            <h1>La beauté au sommet du luxe</h1>
-            <p>Découvrez nos cosmétiques premium, alliant efficacité et élégance.</p>
-            <a href="#produits" class="btn-primary">Découvrir nos produits</a>
-        </section>
-    </header>
 
-    <main>
-        <section id="produits" class="products">
-            <h2>Nos Produits</h2>
-            <div class="product-grid">
-                <div class="product-card">
-                    <img src="https://via.placeholder.com/300" alt="Produit 1">
-                    <h3>Crème Luxe</h3>
-                    <p>Hydratation profonde pour une peau éclatante.</p>
-                    <button>Acheter</button>
-                </div>
-                <div class="product-card">
-                    <img src="https://via.placeholder.com/300" alt="Produit 2">
-                    <h3>Serum Élixir</h3>
-                    <p>Éclat et jeunesse retrouvés en quelques gouttes.</p>
-                    <
+<body>
+
+<header class="header">
+  
+  <div class="logo">
+        <img src="vaos.png" alt="fond.png">
+    </div>
+  <h1>VAOSCOSMETICS</h1>
+</header>
+
+<nav class="navbar">
+    <ul class="nav-links">
+      <li><a href="">Home</a></li>
+        <li class="dropdown">
+            <a>Nos Produits</a>
+            <ul class="dropdown-menu">
+                <li><a href="exfoliant.html">Notres Gamme d'Exfoliants</a></li>
+                <li><a href="baumesalevres.html">Notre Gamme de Baumes à Lèvres</a></li>
+                
+            </ul>
+        </li>
+      <li><a href="aboutus.html">About us</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+</nav>
+
+
+<section id="produits" class="products">
+  <h2>Nos produits</h2>
+
+  <div class="product-grid">
+
+    <div class="product">
+      <img src="creme.jpg">
+      <h3>baume à lèvres</h3>
+      <p>Hydrate et protège vos lèvres en douceur.</p>
+      <span class="price">8,00 €</span>
+      <button>Acheter</button>
+    </div>
+
+    <div class="product">
+      <img src="vanille.jpg">
+      <h3>Exfoliant</h3>
+      <p>Adouci vos lèvres</p>
+      <span class="price">10,00 €</span>
+      <button>Acheter</button>
+    </div>
+
+    <div class="product">
+      <img src="pamplemousse.jpg" alt="Savon naturel">
+      <h3>Savon naturel</h3>
+      <p>Nettoyage doux, sans agresser la peau.</p>
+      <span class="price">8,90 €</span>
+      <button>Acheter</button>
+    </div>
+
+  </div>
+</section>
+
+<section id="apropos" class="about">
+  <h2>About us</h2>
+  <p>
+    PureSkin est une marque engagée dans la création de cosmétiques
+    naturels, respectueux de votre peau et de la planète.
+  </p>
+</section>
+
+<section id="contact" class="contact">
+  <h2>Contact</h2>
+  <form>
+    <input type="text" placeholder="Nom" required>
+    <input type="email" placeholder="Email" required>
+    <textarea placeholder="Message"></textarea>
+    <button type="submit">Envoyer</button>
+  </form>
+</section>
+
+<footer class="footer">
+  <p>© 2026 PureSkin – Tous droits réservés</p>
+</footer>
+
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
