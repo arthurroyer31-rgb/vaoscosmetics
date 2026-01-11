@@ -187,7 +187,9 @@ body {
   font-size: 14px;
 }
 
-
+title {
+    font-family: 'Playfair Display', serif; /* police luxe pour titres */
+}
 h1 {
     font-family: 'Playfair Display', serif; /* police luxe pour titres */
 }
@@ -195,3 +197,4 @@ h1 {
 p {
     font-family: 'Roboto', sans-serif; /* police simple et lisible pour texte */
 }
+
