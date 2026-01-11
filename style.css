@@ -187,3 +187,11 @@ body {
   font-size: 14px;
 }
 
+
+h1 {
+    font-family: 'Playfair Display', serif; /* police luxe pour titres */
+}
+
+p {
+    font-family: 'Roboto', sans-serif; /* police simple et lisible pour texte */
+}
