@@ -10,11 +10,6 @@ body {
   color: #333;
 }
 
-.header {
-  background: #e8cfc2;
-  text-align: center;
-  padding: 40px 20px;
-}
 
 .nav {
   display: flex;
@@ -30,16 +25,6 @@ body {
   font-weight: bold;
 }
 /* Styles de base de la nav */
-.navbar {
-    background-color: #fff;
-    padding: 10px 20px;
-}
-
-.nav-links {
-    list-style: none;
-    display: flex;
-    gap: 20px;
-}
 
 .nav-links li {
     position: relative; /* important pour le menu absolu */
@@ -53,25 +38,65 @@ body {
     display: block;
 }
 
-/* Menu déroulant caché par défaut */
+.header {
+    background-image: url('header-bg.jpg'); /* ton image de fond */
+    background-size: cover; /* l’image couvre tout le header */
+    background-position: center; /* centré */
+    background-repeat: no-repeat; /* pas de répétition */
+    height: 150px; /* hauteur du header */
+    display: flex;
+    align-items: center; /* centre verticalement logo + nav */
+    padding: 0 20px; /* espace à gauche et à droite */
+}
+
+/* Logo */
+.logo img {
+    height: 100px; /* ajuste selon ton image */
+}
+
+/* Menu aligné à droite */
+.navbar {
+    margin-left: auto; /* pousse le menu vers la droite */
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: white; /* texte visible sur l'image de fond */
+    font-weight: 500;
+    padding: 8px 12px;
+}
+
+/* Menu déroulant */
 .dropdown-menu {
     display: none;
     position: absolute;
-    top: 100%; /* juste en dessous du parent */
+    top: 100%;
     left: 0;
-    background-color: #fff;
+    background-color: rgba(255,255,255,0.95); /* semi-transparent */
     min-width: 150px;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
     border-radius: 6px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
     z-index: 10;
 }
 
-/* Styles des items du menu déroulant */
-.dropdown-menu li a {
-    padding: 10px 15px;
-    color: #555;
+.dropdown:hover .dropdown-menu {
+    display: block;
 }
 
+.dropdown-menu li a {
+    color: #222;
+}
+
+.dropdown-menu li a:hover {
+    color: #b88f6f;
+    background-color: #f9f9f9;
+}
 /* Afficher le menu au survol */
 .dropdown:hover .dropdown-menu {
     display: block;
@@ -197,4 +222,5 @@ h1 {
 p {
     font-family: 'Roboto', sans-serif; /* police simple et lisible pour texte */
 }
+
 
