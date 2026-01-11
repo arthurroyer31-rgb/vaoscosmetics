@@ -39,7 +39,7 @@ body {
 }
 
 .header {
-    background-image: url('fond.jpg'); /* ton image de fond */
+    background-image: url('fond.png'); /* ton image de fond */
     background-size: cover; /* l’image couvre tout le header */
     background-position: center; /* centré */
     background-repeat: no-repeat; /* pas de répétition */
@@ -222,6 +222,7 @@ h1 {
 p {
     font-family: 'Roboto', sans-serif; /* police simple et lisible pour texte */
 }
+
 
 
 
