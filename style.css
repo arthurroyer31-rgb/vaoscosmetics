@@ -214,14 +214,17 @@ body {
 
 title {
     font-family: 'Playfair Display', serif; /* police luxe pour titres */
+    size: 16px;
 }
 h1 {
     font-family: 'Playfair Display', serif; /* police luxe pour titres */
+    size: 14px;
 }
 
 p {
     font-family: 'Roboto', sans-serif; /* police simple et lisible pour texte */
 }
+
 
 
 
