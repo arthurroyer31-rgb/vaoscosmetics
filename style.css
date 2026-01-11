@@ -214,16 +214,23 @@ body {
 
 title {
     font-family: 'Playfair Display', serif; /* police luxe pour titres */
-    size: 16px;
+    font-size: 2rem;
+    position: center 
 }
+@media (max-width: 768px) {
 h1 {
     font-family: 'Playfair Display', serif; /* police luxe pour titres */
-    size: 14px;
+    font-size: 1.5rem;
 }
+h2 {
+    font-size: 1.2rem: 
+    font-family: 'Roboto', sans-serif;
 
 p {
     font-family: 'Roboto', sans-serif; /* police simple et lisible pour texte */
+    font-size: 0.9rem;
 }
+
 
 
 
