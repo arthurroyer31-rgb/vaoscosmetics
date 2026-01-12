@@ -196,7 +196,7 @@ h1 {
     text-transform: uppercase;
     font-weight: 700;
     letter-spacing: 0.05em;
-    font-color: #B59E7D;
+    color: #B59E7D;
     
 }
 
@@ -204,6 +204,7 @@ h1 {
 p {
     font-family: 'Roboto', sans-serif; /* police simple et lisible pour texte */
 }
+
 
 
 
