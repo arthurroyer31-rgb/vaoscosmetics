@@ -35,68 +35,27 @@
     </nav>
   </div>  
 </header>
-<section id="carroussel" class="carroussel">
-  <div style="max-width:1200px; margin:auto; overflow:hidden; position:relative;">
-
-    <h2 style="text-align:center;">Nos meilleures ventes</h2>
-
-    <div style="overflow:hidden;">
-        <div id="track"
-             style="display:flex; gap:20px; transition:transform 0.4s ease; transform:translateX(0px);">
-
-            <div style="min-width:220px; border:1px solid #ddd; border-radius:10px; padding:15px; text-align:center;">
-                <img src="https://via.placeholder.com/200x150"
-                     style="width:100%; height:150px; object-fit:contain;">
-                <p><b>Produit 1</b></p>
-                <p style="color:#c00;"><b>99,99 €</b></p>
-            </div>
-
-            <div style="min-width:220px; border:1px solid #ddd; border-radius:10px; padding:15px; text-align:center;">
-                <img src="https://via.placeholder.com/200x150"
-                     style="width:100%; height:150px; object-fit:contain;">
-                <p><b>Produit 2</b></p>
-                <p style="color:#c00;"><b>129,00 €</b></p>
-            </div>
-
-            <div style="min-width:220px; border:1px solid #ddd; border-radius:10px; padding:15px; text-align:center;">
-                <img src="https://via.placeholder.com/200x150"
-                     style="width:100%; height:150px; object-fit:contain;">
-                <p><b>Produit 3</b></p>
-                <p style="color:#c00;"><b>249,99 €</b></p>
-            </div>
-
+<section class="carousel">
+    <div class="carousel-container">
+        <div class="carousel-slide active">
+            <img src="creme.jpg" alt="Produit 1">
+            <div class="carousel-caption">Soin visage luxe</div>
+        </div>
+        <div class="carousel-slide">
+            <img src="serum.jpg" alt="Produit 2">
+            <div class="carousel-caption">Parfum raffiné</div>
+        </div>
+        <div class="carousel-slide">
+            <img src="exfoliant.jpg" alt="Produit 3">
+            <div class="carousel-caption">Maquillage premium</div>
         </div>
     </div>
 
-    <!-- BOUTONS -->
-    <button
-        onclick="
-        let t=document.getElementById('track');
-        let x=t.getAttribute('data-x')||0;
-        x=parseInt(x)-240;
-        t.style.transform='translateX('+x+'px)';
-        t.setAttribute('data-x',x);
-        "
-        style="position:absolute; top:50%; left:0; transform:translateY(-50%);
-               font-size:24px; background:white; border:1px solid #ccc; cursor:pointer;">
-        ‹
-    </button>
+    <!-- Flèches -->
+    <button class="prev">&#10094;</button>
+    <button class="next">&#10095;</button>
+</section>
 
-    <button
-        onclick="
-        let t=document.getElementById('track');
-        let x=t.getAttribute('data-x')||0;
-        x=parseInt(x)+240;
-        t.style.transform='translateX('+x+'px)';
-        t.setAttribute('data-x',x);
-        "
-        style="position:absolute; top:50%; right:0; transform:translateY(-50%);
-               font-size:24px; background:white; border:1px solid #ccc; cursor:pointer;">
-        ›
-    </button>
-
-  </div>
-</section> 
 
 <footer class="footer">
   <p>© 2026 PureSkin – Tous droits réservés</p>
@@ -104,6 +63,7 @@
 
 </body>
 </html>
+
 
 
 
