@@ -5,7 +5,6 @@ html {
 
 body {
   background: #fafafa;
-  color: #333;
 }
 
 .header {
@@ -205,6 +204,7 @@ h1 {
 p {
     font-family: 'Roboto', sans-serif; /* police simple et lisible pour texte */
 }
+
 
 
 
