@@ -19,6 +19,7 @@ body {
   padding: 0 20px; /* espace à gauche et à droite */
   font-family: 'Cormorant Garamond', serif;
   font-weight: 700;
+  font-color: #584738;
     
 }
 .logo img {
@@ -204,6 +205,7 @@ h1 {
 p {
     font-family: 'Roboto', sans-serif; /* police simple et lisible pour texte */
 }
+
 
 
 
