@@ -43,9 +43,6 @@ body {
     position: relative; /* important pour le menu absolu */
     
 }
-.nav-links >li>a {
-    font-weight:700;
-}
 .nav-links a {
     text-decoration: none;
     color: #584738;
@@ -200,7 +197,7 @@ h1 {
     text-transform: uppercase;
     font-weight: 700;
     letter-spacing: 0.05em;
-    font-color: #584738;
+    font-color: white;
     
 }
 
@@ -208,6 +205,7 @@ h1 {
 p {
     font-family: 'Roboto', sans-serif; /* police simple et lisible pour texte */
 }
+
 
 
 
