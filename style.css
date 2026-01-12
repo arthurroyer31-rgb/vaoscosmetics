@@ -12,7 +12,7 @@ body {
 
 /* HEADER */
 .header {
-  background: url('fond2.png') center / cover no-repeat;
+  background: url('fond3.png') center / cover no-repeat;
   height: 150px;
   display: flex;
   align-items: center;
@@ -190,3 +190,4 @@ h1 {
     overflow-x: hidden;
   }
 }
+
