@@ -14,7 +14,7 @@ body {
 }
 
 .header {
-  background-image:url('fond3.png');
+  background-image:url('fond3.jpg');
   background-size: cover; /* l’image couvre tout le header */
   background-position: center; /* centré */
   background-repeat: no-repeat; /* pas de répétition */
@@ -189,6 +189,7 @@ h1 {
 p {
     font-family: 'Roboto', sans-serif; /* police simple et lisible pour texte */
 }
+
 
 
 
