@@ -9,7 +9,9 @@ body {
   background: #fafafa;
   color: #333;
 }
-
+head {
+  text-align: center;
+}
 
 .nav {
   display: flex;
@@ -225,6 +227,7 @@ p {
     font-family: 'Roboto', sans-serif; /* police simple et lisible pour texte */
     font-size: 0.9rem;
 }
+
 
 
 
