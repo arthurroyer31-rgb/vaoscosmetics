@@ -2,7 +2,7 @@
 <html lang="fr">
 <head>
   <meta charset="UTF-8">
-  <title>VAOSCOSMETICS</title>
+  <title>PureSkin – Cosmétiques naturels</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="style.css">
 </head>
@@ -10,55 +10,46 @@
 <body>
 
 <header class="header">
-  <div class="logo">
-    <img src="vaos.png" alt="Logo VAOS Cosmetics">
-  </div>
-
-  <h1>VAOS COSMETICS</h1>
-
-  <nav class="navbar">
-    <ul class="nav-links">
-      <li><a href="index.html">Home</a></li>
-
-      <li class="dropdown">
-        <a href="#" class="dropdown-toggle">Nos Produits</a>
-        <ul class="dropdown-menu">
-          <li><a href="exfoliant.html">Gamme d'Exfoliants</a></li>
-          <li><a href="baumesalevres.html">Baumes à Lèvres</a></li>
-        </ul>
-      </li>
-
-      <li><a href="aboutus.html">About us</a></li>
-      <li><a href="#contact">Contact</a></li>
-    </ul>
-  </nav>
+  <h1>PureSkin</h1>
+  <p>Cosmétiques naturels & éthiques</p>
 </header>
 
-<section class="products">
+<nav class="nav">
+  <a href="#produits">Produits</a>
+  <a href="#apropos">À propos</a>
+  <a href="#contact">Contact</a>
+</nav>
+
+<section class="hero">
+  <h2>La beauté au naturel</h2>
+  <p>Des soins doux pour votre peau, respectueux de l’environnement</p>
+</section>
+
+<section id="produits" class="products">
   <h2>Nos produits</h2>
 
   <div class="product-grid">
 
     <div class="product">
-      <img src="creme.jpg" alt="Baume à lèvres">
-      <h3>Baume à lèvres</h3>
-      <p>Hydrate et protège vos lèvres.</p>
-      <span class="price">8,00 €</span>
+      <img src="images/creme.jpg" alt="Crème hydratante">
+      <h3>Crème hydratante</h3>
+      <p>Hydrate et protège la peau en douceur.</p>
+      <span class="price">24,90 €</span>
       <button>Acheter</button>
     </div>
 
     <div class="product">
-      <img src="vanille.jpg" alt="Exfoliant lèvres">
-      <h3>Exfoliant</h3>
-      <p>Adoucit vos lèvres.</p>
-      <span class="price">10,00 €</span>
+      <img src="images/serum.jpg" alt="Sérum éclat">
+      <h3>Sérum éclat</h3>
+      <p>Illumine le teint et revitalise la peau.</p>
+      <span class="price">34,90 €</span>
       <button>Acheter</button>
     </div>
 
     <div class="product">
-      <img src="pamplemousse.jpg" alt="Savon naturel">
+      <img src="images/savon.jpg" alt="Savon naturel">
       <h3>Savon naturel</h3>
-      <p>Nettoyage doux et naturel.</p>
+      <p>Nettoyage doux, sans agresser la peau.</p>
       <span class="price">8,90 €</span>
       <button>Acheter</button>
     </div>
@@ -66,9 +57,12 @@
   </div>
 </section>
 
-<section class="about">
-  <h2>About us</h2>
-  <p>VAOS Cosmetics crée des cosmétiques naturels et respectueux.</p>
+<section id="apropos" class="about">
+  <h2>À propos</h2>
+  <p>
+    PureSkin est une marque engagée dans la création de cosmétiques
+    naturels, respectueux de votre peau et de la planète.
+  </p>
 </section>
 
 <section id="contact" class="contact">
@@ -82,10 +76,8 @@
 </section>
 
 <footer class="footer">
-  <p>© 2026 VAOS Cosmetics – Tous droits réservés</p>
+  <p>© 2026 PureSkin – Tous droits réservés</p>
 </footer>
 
-<script src="script.js"></script>
 </body>
 </html>
-
