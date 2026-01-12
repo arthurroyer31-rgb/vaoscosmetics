@@ -70,6 +70,7 @@ body {
 .dropdown-menu li a {
     padding: 10px 15px;
     color: #584738;
+    font-weight: 700;
 }
 
 /* Afficher le menu au survol */
@@ -205,6 +206,7 @@ h1 {
 p {
     font-family: 'Roboto', sans-serif; /* police simple et lisible pour texte */
 }
+
 
 
 
