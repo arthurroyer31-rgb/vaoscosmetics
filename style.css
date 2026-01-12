@@ -9,128 +9,81 @@ body {
   background: #fafafa;
   color: #333;
 }
-head {
-  text-align: center;
-}
 
-.nav {
-  display: flex;
-  justify-content: center;
-  gap: 20px;
-  background: black;
-  color: black
-  padding: 15px;
-}
-
-.nav a {
-  text-decoration: none;
-  color: #584738;
-  font-weight: bold;
-}
-/* Styles de base de la nav */
-
-.nav-links li {
-    position: relative; /* important pour le menu absolu */
-}
-
-.nav-links a {
-    text-decoration: none;
-    color: #222;
-    font-weight: 500;
-    padding: 8px 12px;
-    display: block;
-}
-
+/* HEADER */
 .header {
-    background-image: url('fond2.png'); /* ton image de fond */
-    background-size: cover; /* l’image couvre tout le header */
-    background-position: center; /* centré */
-    background-repeat: no-repeat; /* pas de répétition */
-    height: 150px; /* hauteur du header */
-    display: flex;
-    align-items: center; /* centre verticalement logo + nav */
-    padding: 0 20px; /* espace à gauche et à droite */
+  background: url('fond2.png') center / cover no-repeat;
+  height: 150px;
+  display: flex;
+  align-items: center;
+  padding: 0 20px;
 }
 
-/* Logo */
 .logo img {
-    height: 100px; /* ajuste selon ton image */
+  height: 90px;
 }
 
-/* Menu aligné à droite */
+h1 {
+  margin-left: 15px;
+  color: #584738;
+}
+
 .navbar {
-    margin-left: auto; /* pousse le menu vers la droite */
+  margin-left: auto;
 }
 
 .nav-links {
-    list-style: none;
-    display: flex;
-    gap: 20px;
+  list-style: none;
+  display: flex;
+  gap: 20px;
 }
 
 .nav-links a {
-    text-decoration: none;
-    color: #584738; /* texte visible sur l'image de fond */
-    font-weight: 500;
-    padding: 8px 12px;
+  text-decoration: none;
+  color: #584738;
+  padding: 8px 12px;
 }
 
-/* Menu déroulant */
+/* DROPDOWN */
+.dropdown {
+  position: relative;
+}
+
 .dropdown-menu {
-    display: none;
-    position: absolute;
-    top: 100%;
-    left: 0;
-    background-color: rgba(300,500,200,0.95); /* semi-transparent */
-    min-width: 150px;
-    border-radius: 6px;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-    z-index: 10;
-}
-
-.dropdown:hover .dropdown-menu {
-    display: block;
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background: rgba(255, 245, 230, 0.95);
+  min-width: 180px;
+  border-radius: 6px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.15);
 }
 
 .dropdown-menu li a {
-    color: #582556;
-}
+  padding: 10px;
+  display: block;
 }
 
+.dropdown-menu li a:hover {
+  background: #B59E7D;
+}
+
+/* affichage via JS */
 .dropdown-menu.active {
   display: block;
 }
-/* Afficher le menu au survol */
-.dropdown:hover .dropdown-menu {
-    display: block;
-}
 
-/* Effet au survol sur les liens */
-.dropdown-menu li a:hover {
-    background-color: #B59E7D;
-    color: #777; /* couleur premium */
-}
-
-.hero {
-  text-align: center;
-  padding: 60px 20px;
-  background: #f5e9e3;
-}
-
+/* PRODUITS */
 .products {
   padding: 60px 20px;
   max-width: 1100px;
   margin: auto;
 }
 
-.products h2 {
-  text-align: center;
-  margin-bottom: 40px;
-}
-
 .product-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(250px,1fr));
   gap: 30px;
 }
 
@@ -146,32 +99,14 @@ head {
   width: 100%;
   height: 200px;
   object-fit: cover;
-  border-radius: 10px;
-}
-
-.product h3 {
-  margin: 15px 0 10px;
-}
-
-.product p {
-  font-size: 14px;
-  color: #666;
 }
 
 .price {
-  display: block;
-  margin: 10px 0;
-  font-size: 18px;
   color: #c28b6b;
   font-weight: bold;
 }
 
-
-.about, .contact {
-  padding: 60px 20px;
-  text-align: center;
-}
-
+/* CONTACT */
 .contact form {
   max-width: 400px;
   margin: auto;
@@ -180,62 +115,21 @@ head {
   gap: 15px;
 }
 
-.contact input,
-.contact textarea {
-  padding: 10px;
-  border-radius: 5px;
-  border: 1px solid #ccc;
-}
-
-.contact button {
-  background: #c28b6b;
-  color: white;
-  border: none;
-  padding: 12px;
-  border-radius: 20px;
-}
-
+/* FOOTER */
 .footer {
   background: #333;
   color: white;
   text-align: center;
   padding: 20px;
-  font-size: 14px;
 }
 
-title {
-    font-family: 'Playfair Display', serif; /* police luxe pour titres */
-    font-size: 2rem;
-    text-align: center 
-}
+/* MOBILE */
 @media (max-width: 768px) {
-h1 {
-    font-family: 'Playfair Display', serif; /* police luxe pour titres */
-    font-size: 1.5rem;
-}
+  h1 {
+    font-size: 1.4rem;
+  }
 
-@media (hover: hover){
-  .dropdown:hover .dropdown-menu{
-    display: block;
+  .nav-links {
+    gap: 10px;
   }
 }
-h2 {
-    font-size: 1.2rem: 
-    font-family: 'Roboto', sans-serif;
-
-p {
-    font-family: 'Roboto', sans-serif; /* police simple et lisible pour texte */
-    font-size: 0.9rem;
-}
-
-
-
-
-
-
-
-
-
-
-
-
