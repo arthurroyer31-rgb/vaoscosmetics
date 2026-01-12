@@ -40,7 +40,7 @@ body {
 }
 
 .header {
-    background-image: url('fond.png'); /* ton image de fond */
+    background-image: url('fond2.png'); /* ton image de fond */
     background-size: cover; /* l’image couvre tout le header */
     background-position: center; /* centré */
     background-repeat: no-repeat; /* pas de répétition */
@@ -225,6 +225,7 @@ p {
     font-family: 'Roboto', sans-serif; /* police simple et lisible pour texte */
     font-size: 0.9rem;
 }
+
 
 
 
