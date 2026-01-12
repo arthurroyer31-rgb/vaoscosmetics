@@ -12,9 +12,9 @@ body {
   background-size: cover; /* l’image couvre tout le header */
   background-position: center; /* centré */
   background-repeat: no-repeat; /* pas de répétition */
-  height: 500px; /* hauteur du header */
+  height: 200px; /* hauteur du header */
   display: flex;
-  align-logo: center; /* centre verticalement logo + nav */
+  align-items: center; /* centre verticalement logo + nav */
   padding: 0 20px; /* espace à gauche et à droite */
   
     
@@ -204,6 +204,7 @@ h1 {
 p {
     font-family: 'Roboto', sans-serif; /* police simple et lisible pour texte */
 }
+
 
 
 
