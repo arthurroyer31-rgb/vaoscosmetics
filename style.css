@@ -93,7 +93,10 @@ body {
 .dropdown-menu li a {
     color: #582556;
 }
+}
 
+.dropdown-menu.active {
+  display: block;
 }
 /* Afficher le menu au survol */
 .dropdown:hover .dropdown-menu {
@@ -102,8 +105,8 @@ body {
 
 /* Effet au survol sur les liens */
 .dropdown-menu li a:hover {
-    background-color: #584738;
-    color: #b88f6f; /* couleur premium */
+    background-color: #B59E7D;
+    color: #777; /* couleur premium */
 }
 
 .hero {
@@ -161,18 +164,6 @@ body {
   font-weight: bold;
 }
 
-.product button {
-  background: #c28b6b;
-  color: white;
-  border: none;
-  padding: 10px 20px;
-  border-radius: 20px;
-  cursor: pointer;
-}
-
-.product button:hover {
-  background: #a56f54;
-}
 
 .about, .contact {
   padding: 60px 20px;
@@ -220,6 +211,12 @@ h1 {
     font-family: 'Playfair Display', serif; /* police luxe pour titres */
     font-size: 1.5rem;
 }
+
+@media (hover: hover){
+  .dropdown:hover .dropdown-menu{
+    display: block;
+  }
+}
 h2 {
     font-size: 1.2rem: 
     font-family: 'Roboto', sans-serif;
@@ -228,6 +225,7 @@ p {
     font-family: 'Roboto', sans-serif; /* police simple et lisible pour texte */
     font-size: 0.9rem;
 }
+
 
 
 
