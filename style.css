@@ -193,19 +193,12 @@ body {
   font-size: 14px;
 }
 
-h1 {
-    font-family: 'Cormorant Garamond', serif; /* police luxe pour titres */
-    font-size: clamp(2rem, 5vw, 3rem);
-    text-transform: uppercase;
-    font-weight: 700;
-    letter-spacing: 0.05em;
-    font-color: #584738;
-    
-}
+
 
 p {
     font-family: 'Roboto', sans-serif; /* police simple et lisible pour texte */
 }
+
 
 
 
