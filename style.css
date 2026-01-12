@@ -191,3 +191,76 @@ h1 {
   }
 }
 
+/* ===== CORRECTION MOBILE NAVBAR (ANTI DÉBORDEMENT) ===== */
+@media (max-width: 768px) {
+
+  /* sécurité absolue */
+  * {
+    max-width: 100%;
+  }
+
+  html, body {
+    overflow-x: hidden;
+  }
+
+  /* HEADER */
+  .header {
+    display: block;
+    width: 100%;
+    height: auto;
+    padding: 10px 0;
+    text-align: center;
+  }
+
+  /* LOGO */
+  .logo img {
+    height: 70px;
+    margin: 0 auto;
+    display: block;
+  }
+
+  h1 {
+    margin: 8px 0;
+  }
+
+  /* NAVBAR */
+  .navbar {
+    width: 100%;
+  }
+
+  /* MENU */
+  .nav-links {
+    list-style: none;
+    width: 100%;
+    padding: 0;
+    margin: 0;
+  }
+
+  .nav-links li {
+    width: 100%;
+  }
+
+  .nav-links a {
+    display: block;
+    width: 100%;
+    padding: 10px 0;
+    text-align: center;
+  }
+
+  /* DROPDOWN */
+  .dropdown-menu {
+    position: static;
+    display: none;
+    width: 100%;
+    background: #f5efe8;
+    box-shadow: none;
+  }
+
+  .dropdown-menu li a {
+    padding: 8px 0;
+  }
+
+  .dropdown-menu.active {
+    display: block;
+  }
+}
