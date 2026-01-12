@@ -198,12 +198,13 @@ h1 {
     font-family: 'Cormorant', serif; /* police luxe pour titres */
     font-size: clamp(2rem, 5vw, 3rem);
     text-align: center;
-    margin-bottom: center;
+    margin-bottom: bottom;
 }
 
 p {
     font-family: 'Roboto', sans-serif; /* police simple et lisible pour texte */
 }
+
 
 
 
