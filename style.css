@@ -1,13 +1,8 @@
-/* RESET */
 * {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
-  font-family: Playfair Display, sans-serif;
-}
-
-html, body {
-  overflow-x: hidden;
+  font-family: Arial, sans-serif;
 }
 
 body {
@@ -15,10 +10,9 @@ body {
   color: #333;
 }
 
-/* ================= HEADER ================= */
-
+/* HEADER */
 .header {
-  background: url('fond3.png') center / cover no-repeat;
+  background: url('fond2.png') center / cover no-repeat;
   height: 150px;
   display: flex;
   align-items: center;
@@ -48,11 +42,9 @@ h1 {
   text-decoration: none;
   color: #584738;
   padding: 8px 12px;
-  display: block;
 }
 
-/* ================= DROPDOWN ================= */
-
+/* DROPDOWN */
 .dropdown {
   position: relative;
 }
@@ -70,18 +62,19 @@ h1 {
 
 .dropdown-menu li a {
   padding: 10px;
+  display: block;
 }
 
 .dropdown-menu li a:hover {
   background: #B59E7D;
 }
 
+/* affichage via JS */
 .dropdown-menu.active {
   display: block;
 }
 
-/* ================= PRODUITS ================= */
-
+/* PRODUITS */
 .products {
   padding: 60px 20px;
   max-width: 1100px;
@@ -113,8 +106,7 @@ h1 {
   font-weight: bold;
 }
 
-/* ================= CONTACT ================= */
-
+/* CONTACT */
 .contact form {
   max-width: 400px;
   margin: auto;
@@ -123,8 +115,7 @@ h1 {
   gap: 15px;
 }
 
-/* ================= FOOTER ================= */
-
+/* FOOTER */
 .footer {
   background: #333;
   color: white;
@@ -132,55 +123,13 @@ h1 {
   padding: 20px;
 }
 
-/* ================= MOBILE ================= */
-
+/* MOBILE */
 @media (max-width: 768px) {
-
-  /* HEADER EN COLONNE */
-  .header {
-    flex-direction: column;
-    height: auto;
-    padding: 15px;
-    text-align: center;
-  }
-
-  .logo img {
-    height: 70px;
-    margin-bottom: 5px;
-  }
-
   h1 {
-    margin: 5px 0 10px;
     font-size: 1.4rem;
   }
 
-  /* NAVBAR SOUS LE TITRE */
-  .navbar {
-    width: 100%;
-  }
-
   .nav-links {
-    flex-direction: horizontal;
-    gap: 10;
-    width: 100%;
-  }
-
-  .nav-links li {
-    width: 100%;
-    text-align: center;
-  }
-
-  .nav-links a {
-    width: 100%;
-    padding: 10px 0;
-  }
-
-  /* DROPDOWN MOBILE */
-  .dropdown-menu {
-    position: static;
-    width: 100%;
-    box-shadow: none;
+    gap: 10px;
   }
 }
-
-
