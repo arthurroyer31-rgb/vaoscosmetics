@@ -183,13 +183,11 @@ body {
 
 h1 {
     font-family: 'Playfair Display', serif; /* police luxe pour titres */
+    font-size: clamp(2rem, 5vw, 3rem);
 }
 
 p {
     font-family: 'Roboto', sans-serif; /* police simple et lisible pour texte */
 }
-@media (max-width: 768px) {
-    h1 {
-        font-size: 2rem;
-    }
-}
+
+
