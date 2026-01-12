@@ -18,6 +18,8 @@ body {
   align-items: center; /* centre verticalement logo + nav */
   padding: 0 20px; /* espace à gauche et à droite */
   font-family: 'Cormorant Garamond', serif;
+  font-weight: 500;
+    
 }
 .logo img {
     height: 100px; /* ajuste selon ton image */
@@ -202,6 +204,7 @@ h1 {
 p {
     font-family: 'Roboto', sans-serif; /* police simple et lisible pour texte */
 }
+
 
 
 
