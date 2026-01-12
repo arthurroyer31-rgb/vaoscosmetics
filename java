@@ -5,3 +5,4 @@ document.querySelectorAll('.dropdown-toggle').forEach(toggle => {
     menu.classList.toggle('active');
   });
 });
+
