@@ -190,7 +190,7 @@ body {
   padding: 20px;
   font-size: 14px;
 }
-h1 {
+.h1 {
     font-family: 'Cormorant Garamond', serif; /* police luxe pour titres */
     font-size: clamp(2rem, 5vw, 3rem);
     text-transform: uppercase;
@@ -201,15 +201,16 @@ h1 {
 }
 
 
-p {
+.p {
     font-family: 'Roboto', sans-serif; /* police simple et lisible pour texte */
 }
-certif {
+.certif {
     align-items: center; 
 }
-wbe {
+.wbe {
     height: 100 px;
 }
-vegan {
+.vegan {
     height: 100 px;
 }
+
