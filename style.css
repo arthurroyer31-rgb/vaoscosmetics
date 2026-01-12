@@ -31,7 +31,6 @@ body {
 .navbar1 h1 {
     margin: 0;
     font-size: 3rem;
-    font-weight: 700;
 }
   
 .nav-links {
@@ -42,8 +41,11 @@ body {
 
 .nav-links li {
     position: relative; /* important pour le menu absolu */
+    
 }
-
+.nav-links >li>a {
+    font-weight:700;
+}
 .nav-links a {
     text-decoration: none;
     color: #584738;
@@ -206,6 +208,7 @@ h1 {
 p {
     font-family: 'Roboto', sans-serif; /* police simple et lisible pour texte */
 }
+
 
 
 
