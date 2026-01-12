@@ -160,8 +160,8 @@ h1 {
   }
 
   .nav-links {
-    flex-direction: column;
-    gap: 0;
+    flex-direction: horizontal;
+    gap: 10;
     width: 100%;
   }
 
@@ -182,3 +182,4 @@ h1 {
     box-shadow: none;
   }
 }
+
