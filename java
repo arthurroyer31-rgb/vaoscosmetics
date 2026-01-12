@@ -14,14 +14,3 @@ document.querySelectorAll('.dropdown-toggle').forEach(toggle => {
             menu.classList.toggle('active');
         }
     });
-});
-document.addEventListener('click', (e) => {
-    if (window.matchMedia("(hover: none)").matches) {
-        document.querySelectorAll('.dropdown').forEach(dropdown => {
-            if (!dropdown.contains(e.target)) {
-                dropdown.querySelector('.dropdown-menu').classList.remove('active');
-            }
-        });
-    }
-});
-
