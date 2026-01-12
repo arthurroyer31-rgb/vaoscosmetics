@@ -28,7 +28,7 @@ body {
 }
 
 .navbar {
-    background-color: #584738;
+    background-color: transparent;
     padding: 10px 20px;
 }
 .navbar1 h1 {
@@ -61,7 +61,7 @@ body {
     position: absolute;
     top: 100%; /* juste en dessous du parent */
     left: 0;
-    background-color: #584738;
+    background-color: transparent;
     min-width: 150px;
     box-shadow: 0 4px 10px rgba(0,0,0,0.1);
     border-radius: 6px;
@@ -71,7 +71,7 @@ body {
 /* Styles des items du menu déroulant */
 .dropdown-menu li a {
     padding: 10px 15px;
-    color: white;
+    color: #584738;
 }
 
 /* Afficher le menu au survol */
@@ -81,7 +81,7 @@ body {
 
 /* Effet au survol sur les liens */
 .dropdown-menu li a:hover {
-    background-color: #f5f5f5;
+    background-color: #584738;
     color: #b88f6f; /* couleur premium */
 }
 /* Desktop uniquement */
@@ -202,6 +202,7 @@ h1 {
 p {
     font-family: 'Roboto', sans-serif; /* police simple et lisible pour texte */
 }
+
 
 
 
