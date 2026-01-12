@@ -195,13 +195,14 @@ body {
 }
 
 h1 {
-    font-family: 'Playfair Display', serif; /* police luxe pour titres */
+    font-family: 'Circe Contrast', serif; /* police luxe pour titres */
     font-size: clamp(2rem, 5vw, 3rem);
 }
 
 p {
     font-family: 'Roboto', sans-serif; /* police simple et lisible pour texte */
 }
+
 
 
 
