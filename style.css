@@ -35,7 +35,7 @@ body {
     align-items: center; /* aligne verticalement logo et titre */
     gap: 50px;
     height: 100px;
-    font-size:clamp(1rem, 5vw, 2.5rem)        /* espace entre logo et titre */
+    font-size:clamp(0.5rem, 5vw, 2rem)        /* espace entre logo et titre */
 }
 
 .logo img {
@@ -325,4 +325,5 @@ body {
 }
 .carousel * {
     pointer-events: auto;
+
 }
