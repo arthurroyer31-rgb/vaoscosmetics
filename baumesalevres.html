@@ -35,7 +35,8 @@
     </nav>
   </div>  
 </header>
-<section class="carousel">
+<div class="carousel-row">
+    <section class="carousel">
     <div class="carousel-container">
         <div class="carousel-slide">
             <img src="creme.jpg" alt="Produit 1">
@@ -58,41 +59,216 @@
             <div class="carousel-caption">Baume à Lèvres saveur amande douce fleur de coton</div>
         </div>
     </div>
+    
 
     <!-- Flèches -->
     <button class="prev">&#10094;</button>
     <button class="next">&#10095;</button>
-</section>
-<script>
-const container = document.querySelector('.carousel-container');
-const slides = document.querySelectorAll('.carousel-slide');
-const prev = document.querySelector('.prev');
-const next = document.querySelector('.next');
+    </section>
+    <script>
+    document.querySelectorAll('.carousel').forEach(carousel => {
+  const container = carousel.querySelector('.carousel-container');
+  const slides = carousel.querySelectorAll('.carousel-slide');
+  const prev = carousel.querySelector('.prev');
+  const next = carousel.querySelector('.next');
 
-let index = 0;
+  let index = 0;
 
-function updateCarousel() {
-    container.style.transform = `translateX(-${index * 100}%)`;
-}
-// Flèches
-next.addEventListener('click', () => {
-    index = (index + 1) % slides.length;
-    updateCarousel();
+  function updateCarousel() {
+      slides.forEach((slide, i) => slide.classList.toggle('active', i === index));
+      container.style.transform = `translateX(-${index * 100}%)`;
+  }
+
+  next.addEventListener('click', () => {
+      index = (index + 1) % slides.length;
+      updateCarousel();
+  });
+
+  prev.addEventListener('click', () => {
+      index = (index - 1 + slides.length) % slides.length;
+      updateCarousel();
+  });
+
+  // initialisation
+  updateCarousel();
 });
-prev.addEventListener('click', () => {
-    index = (index - 1 + slides.length) % slides.length;
-    updateCarousel();
-});
-document.querySelectorAll('.dropdown > a').forEach(link => {
-    link.addEventListener('click', function(e) {
-        const menu = this.nextElementSibling;
-        if(menu && menu.classList.contains('dropdown-menu')) {
-            e.preventDefault(); // empêche de suivre le lien
-            menu.classList.toggle('active'); // ouvre/ferme le menu
-        }
+    </script>
+
+    <section class="carousel">
+    <div class="carousel-container">
+        <div class="carousel-slide">
+            <img src="creme.jpg" alt="Produit 7">
+            <div class="carousel-caption">Baume à Lèvres saveur Pamplemousse Rose</div>
+        </div>
+        <div class="carousel-slide">
+            <img src="creme.jpg" alt="Produit 8">
+            <div class="carousel-caption">Baume à Lèvres saveur amande abricot</div>
+        </div>
+        <div class="carousel-slide">
+            <img src="exfoliant.jpg" alt="Produit 9">
+            <div class="carousel-caption">Baume à Lèvres saveur poire jasmin</div>
+        </div>
+        <div class="carousel-slide">
+            <img src="exfoliant.jpg" alt="Produit 10">
+            <div class="carousel-caption">Baume à Lèvres saveur pomme camomille</div>
+        </div>
+        <div class="carousel-slide">
+            <img src="exfoliant.jpg" alt="Produit 11">
+            <div class="carousel-caption">Baume à Lèvres saveur amande douce fleur de coton</div>
+        </div>
+    </div>
+    
+
+    <!-- Flèches -->
+    <button class="prev">&#10094;</button>
+    <button class="next">&#10095;</button>
+    </section>
+    <script>
+     document.querySelectorAll('.carousel').forEach(carousel => {
+        const container = carousel.querySelector('.carousel-container');
+        const slides = carousel.querySelectorAll('.carousel-slide');
+        const prev = carousel.querySelector('.prev');
+        const next = carousel.querySelector('.next');
+
+        let index = 0;
+
+        function updateCarousel() {
+            slides.forEach((slide, i) => slide.classList.toggle('active', i === index));
+            container.style.transform = `translateX(-${index * 100}%)`;
+    }
+
+    next.addEventListener('click', () => {
+      index = (index + 1) % slides.length;
+      updateCarousel();
     });
+
+  prev.addEventListener('click', () => {
+      index = (index - 1 + slides.length) % slides.length;
+      updateCarousel();
+  });
+
+  // initialisation
+  updateCarousel();
 });
-</script>
+    </script>
+
+    <section class="carousel">
+    <div class="carousel-container">
+        <div class="carousel-slide">
+            <img src="creme.jpg" alt="Produit 7">
+            <div class="carousel-caption">Baume à Lèvres saveur Pamplemousse Rose</div>
+        </div>
+        <div class="carousel-slide">
+            <img src="creme.jpg" alt="Produit 8">
+            <div class="carousel-caption">Baume à Lèvres saveur amande abricot</div>
+        </div>
+        <div class="carousel-slide">
+            <img src="exfoliant.jpg" alt="Produit 9">
+            <div class="carousel-caption">Baume à Lèvres saveur poire jasmin</div>
+        </div>
+        <div class="carousel-slide">
+            <img src="exfoliant.jpg" alt="Produit 10">
+            <div class="carousel-caption">Baume à Lèvres saveur pomme camomille</div>
+        </div>
+        <div class="carousel-slide">
+            <img src="exfoliant.jpg" alt="Produit 11">
+            <div class="carousel-caption">Baume à Lèvres saveur amande douce fleur de coton</div>
+        </div>
+    </div>
+    
+
+    <!-- Flèches -->
+    <button class="prev">&#10094;</button>
+    <button class="next">&#10095;</button>
+    </section>
+    <script>
+     document.querySelectorAll('.carousel').forEach(carousel => {
+        const container = carousel.querySelector('.carousel-container');
+        const slides = carousel.querySelectorAll('.carousel-slide');
+        const prev = carousel.querySelector('.prev');
+        const next = carousel.querySelector('.next');
+
+        let index = 0;
+
+        function updateCarousel() {
+            slides.forEach((slide, i) => slide.classList.toggle('active', i === index));
+            container.style.transform = `translateX(-${index * 100}%)`;
+    }
+
+    next.addEventListener('click', () => {
+      index = (index + 1) % slides.length;
+      updateCarousel();
+    });
+
+  prev.addEventListener('click', () => {
+      index = (index - 1 + slides.length) % slides.length;
+      updateCarousel();
+  });
+
+  // initialisation
+  updateCarousel();
+});
+    </script>
+
+    <section class="carousel">
+    <div class="carousel-container">
+        <div class="carousel-slide">
+            <img src="creme.jpg" alt="Produit 7">
+            <div class="carousel-caption">Baume à Lèvres saveur Pamplemousse Rose</div>
+        </div>
+        <div class="carousel-slide">
+            <img src="creme.jpg" alt="Produit 8">
+            <div class="carousel-caption">Baume à Lèvres saveur amande abricot</div>
+        </div>
+        <div class="carousel-slide">
+            <img src="exfoliant.jpg" alt="Produit 9">
+            <div class="carousel-caption">Baume à Lèvres saveur poire jasmin</div>
+        </div>
+        <div class="carousel-slide">
+            <img src="exfoliant.jpg" alt="Produit 10">
+            <div class="carousel-caption">Baume à Lèvres saveur pomme camomille</div>
+        </div>
+        <div class="carousel-slide">
+            <img src="exfoliant.jpg" alt="Produit 11">
+            <div class="carousel-caption">Baume à Lèvres saveur amande douce fleur de coton</div>
+        </div>
+    </div>
+    
+
+    <!-- Flèches -->
+    <button class="prev">&#10094;</button>
+    <button class="next">&#10095;</button>
+    </section>
+    <script>
+     document.querySelectorAll('.carousel').forEach(carousel => {
+        const container = carousel.querySelector('.carousel-container');
+        const slides = carousel.querySelectorAll('.carousel-slide');
+        const prev = carousel.querySelector('.prev');
+        const next = carousel.querySelector('.next');
+
+        let index = 0;
+
+        function updateCarousel() {
+            slides.forEach((slide, i) => slide.classList.toggle('active', i === index));
+            container.style.transform = `translateX(-${index * 100}%)`;
+    }
+
+    next.addEventListener('click', () => {
+      index = (index + 1) % slides.length;
+      updateCarousel();
+    });
+
+  prev.addEventListener('click', () => {
+      index = (index - 1 + slides.length) % slides.length;
+      updateCarousel();
+  });
+
+  // initialisation
+  updateCarousel();
+});
+    </script>
+</div>
+
 <footer class="footer">
   <p>© 2026 PureSkin – Tous droits réservés</p>
 </footer>
