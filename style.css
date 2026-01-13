@@ -227,7 +227,7 @@ body {
 
 .carousel {
     position: relative;
-    max-width: 1000px;
+    max-width: 500px;
     margin: 50px auto;
     overflow: hidden;
     border-radius: 15px;
