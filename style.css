@@ -35,7 +35,7 @@ body {
     align-items: center; /* aligne verticalement logo et titre */
     gap: 50px;
     height: 100px;
-    font-size:clamp(2rem, 4vw, 3rem)        /* espace entre logo et titre */
+    font-size:clamp(1rem, 5vw, 2.5rem)        /* espace entre logo et titre */
 }
 
 .logo img {
@@ -50,16 +50,6 @@ body {
     background-color: transparent;
     padding: 10px 20px;
     
-}
-
-.navbar h1 {
-    margin: 0;
-    font-family: 'Cormorant Garamond', serif;
-    font-size: clamp(2rem, 5vw, 3rem);
-    font-weight: 700;
-    letter-spacing: 0.05em;
-    text-transform: uppercase;
-    color: #584738;
 }
 
 .nav-links {
