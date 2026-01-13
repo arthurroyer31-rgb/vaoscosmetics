@@ -75,6 +75,15 @@ prev.addEventListener('click', () => {
     index = (index - 1 + slides.length) % slides.length;
     updateCarousel();
 });
+document.querySelectorAll('.dropdown > a').forEach(link => {
+    link.addEventListener('click', function(e) {
+        const menu = this.nextElementSibling;
+        if(menu && menu.classList.contains('dropdown-menu')) {
+            e.preventDefault(); // empêche de suivre le lien
+            menu.classList.toggle('active'); // ouvre/ferme le menu
+        }
+    });
+});
 </script>
 
 
