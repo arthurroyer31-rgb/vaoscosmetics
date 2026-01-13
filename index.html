@@ -8,7 +8,6 @@
 </head>
 
 <body>
-
 <header class="header">
   
   <div class="logo">
@@ -37,7 +36,7 @@
 </header>
 <section class="carousel">
     <div class="carousel-container">
-        <div class="carousel-slide active">
+        <div class="carousel-slide">
             <img src="creme.jpg" alt="Produit 1">
             <div class="carousel-caption">Soin visage luxe</div>
         </div>
@@ -55,6 +54,28 @@
     <button class="prev">&#10094;</button>
     <button class="next">&#10095;</button>
 </section>
+<script>
+const container = document.querySelector('.carousel-container');
+const slides = document.querySelectorAll('.carousel-slide');
+const prev = document.querySelector('.prev');
+const next = document.querySelector('.next');
+
+let index = 0;
+
+function updateCarousel() {
+    container.style.transform = `translateX(-${index * 100}%)`;
+}
+
+next.addEventListener('click', () => {
+    index = (index + 1) % slides.length;
+    updateCarousel();
+});
+
+prev.addEventListener('click', () => {
+    index = (index - 1 + slides.length) % slides.length;
+    updateCarousel();
+});
+</script>
 
 
 <footer class="footer">
@@ -63,12 +84,3 @@
 
 </body>
 </html>
-
-
-
-
-
-
-
-
-
