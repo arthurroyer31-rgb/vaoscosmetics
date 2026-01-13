@@ -11,30 +11,32 @@
 <body>
 
 <header class="header">
-  
-  <div class="logo">
-        <img src="vaos.png" alt="fond.png">
+  <div class="header-top">
+    <div class="logo">
+        <img src="vaos.png" alt="fond3.jpg">
     </div>
-  <h1>about us</h1>
-</header>
-
-<nav class="navbar">
-    <ul class="nav-links">
-      <li><a href="index.html">Home</a></li>
-        <li class="dropdown">
+    <div class="titre">
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <h1>VAOSCOSMETICS</h1>
+    </div>
+    </div>
+  <div class="navbar1">
+    <nav class="navbar">
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+          <li class="dropdown">
             <a>Nos Produits</a>
-            <ul class="dropdown-menu">
+              <ul class="dropdown-menu">
                 <li><a href="exfoliant.html">Notres Gamme d'Exfoliants</a></li>
                 <li><a href="baumesalevres.html">Notre Gamme de Baumes à Lèvres</a></li>
-                
-            </ul>
-        </li>
-      <li><a href="aboutus.html">About us</a></li>
-      <li><a href="#contact">Contact</a></li>
-    </ul>
-</nav>
-
-
+              </ul>
+          </li>
+        <li><a href="aboutus.html">About us</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
 <section id="infos" class="certif">
   <div class="certif">
     <div class="wbe">
@@ -45,7 +47,17 @@
     </div>
   </div>
 </section>
-  
+<section class="contact" id="contact">
+  <h2>Contactez-nous</h2>
+  <p>Pour toute question ou suggestion, n’hésitez pas à nous écrire.</p>
+
+  <form action="#" method="post">
+    <input type="text" name="name" placeholder="Votre nom" required>
+    <input type="email" name="email" placeholder="Votre email" required>
+    <textarea name="message" rows="5" placeholder="Votre message" required></textarea>
+    <button type="submit">Envoyer</button>
+  </form>
+</section>
 <footer class="footer">
   <p>© 2026 PureSkin – Tous droits réservés</p>
 </footer>

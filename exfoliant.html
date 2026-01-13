@@ -10,14 +10,15 @@
 
 <body>
 <header class="header">
-  
-  <div class="logo">
+  <div class="header-top">
+    <div class="logo">
         <img src="vaos.png" alt="fond3.jpg">
-  </div>
-  <div class="titre">
+    </div>
+    <div class="titre">
     <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <h1>VAOSCOSMETICS</h1>
-  </div>
+    </div>
+    </div>
   <div class="navbar1">
     <nav class="navbar">
       <ul class="nav-links">
@@ -33,7 +34,7 @@
         <li><a href="#contact">Contact</a></li>
       </ul>
     </nav>
-  </div>  
+  </div>
 </header>
 <div class="carousel-row">
   <section class="carousel">
@@ -205,6 +206,17 @@ document.querySelectorAll('.carousel').forEach(carousel => {
 });
   </script>
 </div>
+<section class="contact" id="contact">
+  <h2>Contactez-nous</h2>
+  <p>Pour toute question ou suggestion, n’hésitez pas à nous écrire.</p>
+
+  <form action="#" method="post">
+    <input type="text" name="name" placeholder="Votre nom" required>
+    <input type="email" name="email" placeholder="Votre email" required>
+    <textarea name="message" rows="5" placeholder="Votre message" required></textarea>
+    <button type="submit">Envoyer</button>
+  </form>
+</section>
 <footer class="footer">
   <p>© 2026 PureSkin – Tous droits réservés</p>
 </footer>
