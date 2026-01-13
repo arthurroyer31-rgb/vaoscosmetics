@@ -1,0 +1,328 @@
+/* =====================
+   BASE
+===================== */
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    margin: 0;
+    background: #fafafa;
+    font-family: 'Roboto', sans-serif;
+    color: #333;
+}
+
+/* =====================
+   HEADER
+===================== */
+
+.header {
+    background-image: url('fond3.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 200px;
+    display: flex;
+    align-items: center;
+    padding: 20px;
+    color: #584738;
+    font-family: 'Cormorant Garamond', serif;
+    flex-direction: column;
+}
+.header-top {
+    display: flex;
+    align-items: center; /* aligne verticalement logo et titre */
+    gap: 50px;
+    height: 100px;
+    font-size:clamp(0.5rem, 5vw, 2rem)        /* espace entre logo et titre */
+}
+
+.logo img {
+    height: 100px;
+}
+
+/* =====================
+   NAVBAR
+===================== */
+
+.navbar {
+    background-color: transparent;
+    padding: 10px 20px;
+    
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+    padding: 0;
+    margin: 0;
+}
+
+.nav-links li {
+    position: relative;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: #584738;
+    font-weight: 700;
+    padding: 8px 12px;
+    display: block;
+    font-size: clamp(1rem, 5vw, 2rem);
+}
+
+/* =====================
+   DROPDOWN MENU
+===================== */
+
+.dropdown-menu {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    min-width: 160px;
+    background: rgba(255,255,255,0.95);
+    box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+    border-radius: 6px;
+    z-index: 100;
+}
+
+.dropdown-menu li a {
+    padding: 10px 15px;
+    color: #584738;
+    font-weight: 700;
+}
+
+/* Hover desktop uniquement */
+@media (hover: hover) {
+    .dropdown:hover .dropdown-menu {
+        display: block;
+    }
+}
+
+/* Mobile / Safari */
+.dropdown-menu.active {
+    display: block;
+}
+
+.dropdown-menu li a:hover {
+    background-color: #584738;
+    color: #b88f6f;
+}
+
+/* =====================
+   SECTIONS
+===================== */
+
+.products {
+    padding: 60px 20px;
+    max-width: 1100px;
+    margin: auto;
+}
+
+.products h2,
+.about h2,
+.contact h2 {
+    text-align: center;
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 2.5rem;
+    margin-bottom: 40px;
+}
+
+/* =====================
+   PRODUITS
+===================== */
+
+.product-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 30px;
+}
+
+.product {
+    background: white;
+    padding: 20px;
+    border-radius: 12px;
+    text-align: center;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+}
+
+.product img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 10px;
+}
+
+.product h3 {
+    margin: 15px 0 10px;
+    font-family: 'Cormorant Garamond', serif;
+}
+
+.product p {
+    font-size: 14px;
+    color: #666;
+}
+
+.price {
+    display: block;
+    margin: 10px 0;
+    font-size: 18px;
+    color: #c28b6b;
+    font-weight: bold;
+}
+
+.product button {
+    background: #c28b6b;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 20px;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+.product button:hover {
+    background: #a56f54;
+}
+
+/* =====================
+   ABOUT / CONTACT
+===================== */
+
+.about,
+.contact {
+    padding: 60px 20px;
+    text-align: center;
+}
+
+.contact form {
+    max-width: 400px;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.contact input,
+.contact textarea {
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+}
+
+.contact button {
+    background: #c28b6b;
+    color: white;
+    border: none;
+    padding: 12px;
+    border-radius: 20px;
+    cursor: pointer;
+}
+
+/* =====================
+   CAROUSEL
+===================== */
+
+.carousel {
+    position: relative;
+    max-width: 300px;
+    margin: 50px auto;
+    overflow: hidden;
+    border-radius: 15px;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+}
+
+.carousel-container {
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+}
+
+.carousel-slide {
+    min-width: 100%;
+    position: relative;
+}
+
+.carousel-slide img {
+    width: 100%;
+    display: block;
+    pointer-events: none;
+}
+
+.carousel-caption {
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: rgba(255,255,255,0.7);
+    padding: 10px 20px;
+    text-align: center;
+    border-radius: 10px;
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(0.5rem, 4vw, 1rem);
+    min-width: relative;      /* largeur minimale */
+    max-width: 80%;
+    pointer-events: none;
+}
+.carousel-row {
+    display: flex;          /* met les carrousels côte à côte */
+    gap: 20px;              /* espace entre eux */
+    justify-content: center; /* centrer la rangée sur la page */
+    flex-wrap: wrap;        /* permet de passer à la ligne sur mobile */
+}
+
+/* Flèches */
+.prev,
+.next {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(255,255,255,0.8);
+    border: none;
+    font-size: 2rem;
+    padding: 10px;
+    border-radius: 10%;
+    cursor: pointer;
+    z-index: 50;
+}
+
+.prev { left: 10px; }
+.next { right: 10px; }
+
+.prev:hover,
+.next:hover {
+    background: rgba(255,255,255,1);
+}
+
+/* =====================
+   FOOTER
+===================== */
+
+.footer {
+    background: #333;
+    color: white;
+    text-align: center;
+    padding: 20px;
+    font-size: 14px;
+}
+
+/* =====================
+   RESPONSIVE
+===================== */
+
+@media (max-width: 768px) {
+    .carousel-caption {
+        font-size: 1.2rem;
+    }
+
+    .prev,
+    .next {
+        font-size: 1.5rem;
+        padding: 8px;
+    }
+}
+.carousel * {
+    pointer-events: auto;
+}
