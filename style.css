@@ -36,7 +36,7 @@ body {
 .header-top {
     display: flex;
     align-items: center; /* aligne verticalement logo et titre */
-    gap: 50px;
+    gap: 10px;
     height: 100px;
     font-size:clamp(0.5rem, 5vw, 2rem)        /* espace entre logo et titre */
 }
