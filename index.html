@@ -36,46 +36,45 @@
     </nav>
   </div>
 </header>
-<section class="carousel">
-    <div class="carousel-container">
-        <div class="carousel-slide">
-            <img src="creme.jpg" alt="Produit 1">
-            <div class="carousel-caption">Soin visage luxe</div>
-        </div>
-        <div class="carousel-slide">
-            <img src="exfoliant.jpg" alt="Produit 2">
-            <div class="carousel-caption">Parfum raffiné</div>
-        </div>
-        <div class="carousel-slide">
-            <img src="exfoliant.jpg" alt="Produit 3">
-            <div class="carousel-caption">Maquillage premium</div>
-        </div>
-    </div>
+<section class="split-section">
+  <div class="split-text">
+    <h2>Soin d’Exception</h2>
+    <p>
+      Des formules haut de gamme conçues pour sublimer la peau avec élégance
+      et efficacité.
+    </p>
+  </div>
+  <div class="split-image">
+    <img src="coton.jpg" alt="Soin visage luxe">
+  </div>
+</section>
 
-    <!-- Flèches -->
-    <button class="prev">&#10094;</button>
-    <button class="next">&#10095;</button>
+<section class="split-section reverse">
+  <div class="split-text">
+    <h2>Ingrédients Sélectionnés</h2>
+    <p>
+      Des actifs rares, naturels et puissants, sélectionnés avec exigence
+      pour des résultats visibles.
+    </p>
+  </div>
+  <div class="split-image">
+    <img src="miel.jpg" alt="Ingrédients premium">
+  </div>
+</section>
+
+<section class="split-section">
+  <div class="split-text">
+    <h2>Rituel Sensoriel</h2>
+    <p>
+      Une expérience unique, pensée comme un rituel de soin quotidien,
+      entre science et plaisir.
+    </p>
+  </div>
+  <div class="split-image">
+    <img src="serum.jpg" alt="Rituel cosmétique">
+  </div>
 </section>
 <script>
-const container = document.querySelector('.carousel-container');
-const slides = document.querySelectorAll('.carousel-slide');
-const prev = document.querySelector('.prev');
-const next = document.querySelector('.next');
-
-let index = 0;
-
-function updateCarousel() {
-    container.style.transform = `translateX(-${index * 100}%)`;
-}
-// Flèches
-next.addEventListener('click', () => {
-    index = (index + 1) % slides.length;
-    updateCarousel();
-});
-prev.addEventListener('click', () => {
-    index = (index - 1 + slides.length) % slides.length;
-    updateCarousel();
-});
 document.querySelectorAll('.dropdown > a').forEach(link => {
     link.addEventListener('click', function(e) {
         const menu = this.nextElementSibling;
