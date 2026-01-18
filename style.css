@@ -12,6 +12,37 @@ body {
     font-family: 'Roboto', sans-serif;
     color: #333;
 }
+.cart-icon {
+    display: flex;
+    margin-left: 15px;
+    align-items: center;
+}
+.cart-icon img{
+    width: auto;      /* taille du panier */
+    height: 80px;     /* taille du panier */
+    object-fit: contain;
+    display: block
+}
+
+.cart-icon:hover {
+    color: #c28b6b;
+    transform: scale(1.1);
+}
+
+
+@media (max-width: 768px) {
+    .nav-links {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .cart-icon {
+        margin: 10px 0 0 0;
+    }
+    .cart-icon img {
+        height: 30px;  /* réduit un peu pour petit écran */
+    }
+}
 
 /* =====================
    HEADER
@@ -33,6 +64,11 @@ body {
     flex-direction: column;
     justify-content: flex-start;
 }
+.header .titre h1 {
+    font-size: clamp(1.6rem, 4vw, 2rem); /* ajuste à ta convenance */
+    margin: 0;
+}
+
 .header-top {
     display: flex;
     align-items: center; /* aligne verticalement logo et titre */
@@ -80,6 +116,8 @@ body {
 .navbar {
     background-color: transparent;
     padding: 10px 20px;
+    align-items: center;
+    justify-content: center;
     
 }
 
@@ -89,10 +127,13 @@ body {
     gap: 20px;
     padding: 0;
     margin: 0;
+    align-items: center;
 }
 
 .nav-links li {
     position: relative;
+    align-items: cneter;
+    display: flex;
 }
 
 .nav-links a {
@@ -121,9 +162,10 @@ body {
 }
 
 .dropdown-menu li a {
-    padding: 10px 15px;
+    padding: 10px 20px;
     color: #584738;
     font-weight: 700;
+    font-size: clamp(0.2rem, 5vw, 1.25rem);
 }
 
 /* Hover desktop uniquement */
@@ -265,7 +307,13 @@ body {
     border-radius: 15px;
     box-shadow: 0 8px 20px rgba(0,0,0,0.2);
 }
-
+.carousel-slide a {
+    display: block;
+    width: 100%;
+    height: 100%;
+    text-decoration: none;
+    color: inherit;
+}
 .carousel-container {
     display: flex;
     transition: transform 0.5s ease-in-out;

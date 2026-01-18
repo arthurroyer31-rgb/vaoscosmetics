@@ -32,6 +32,10 @@
           </li>
         <li><a href="aboutus.html">About us</a></li>
         <li><a href="#contact">Contact</a></li>
+        <li><a href="panier.html" class="cart-icon">
+            <img src="panier.png" alt="Panier">
+            </a>
+        </li>
       </ul>
     </nav>
   </div>
@@ -40,24 +44,22 @@
   <section class="carousel">
     <div class="carousel-container">
         <div class="carousel-slide">
-            <img src="exfoliantv.png" alt="Produit 1">
-            <div class="carousel-caption">exfoliant saveur Pamplemousse</div>
+          <a href="expamplemousse.html">
+            <img src="exfoliant.jpg" alt="Produit 1">
+            <div class="carousel-caption">exfoliant saveur Pamplemousse rose</div>
+          </a>
         </div>
         <div class="carousel-slide">
-            <img src="creme.jpg" alt="Produit 2">
+          <a href="expamplemousse.html">
+            <img src="exfoliantv.png" alt="Produit 2">
             <div class="carousel-caption"></div>
+          </a>
         </div>
         <div class="carousel-slide">
+          <a href="expamplemousse.html">
             <img src="serum.jpg" alt="Produit 3">
             <div class="carousel-caption"></div>
-        </div>
-        <div class="carousel-slide">
-            <img src="coton.jpg" alt="Produit 4">
-            <div class="carousel-caption"></div>
-        </div>
-        <div class="carousel-slide">
-            <img src="miel.jpg" alt="Produit 5">
-            <div class="carousel-caption"></div>
+          </a>
         </div>
     </div>
 
@@ -96,24 +98,22 @@ document.querySelectorAll('.carousel').forEach(carousel => {
   <section class="carousel">
     <div class="carousel-container">
         <div class="carousel-slide">
-            <img src="creme.jpg" alt="Produit 1">
-            <div class="carousel-caption">exfoliant saveur Pamplemousse</div>
+          <a href="expoire.html">
+            <img src="exfoliant.jpg" alt="Produit 1">
+            <div class="carousel-caption">exfoliant saveur Poire jasmin</div>
+          </a>
         </div>
         <div class="carousel-slide">
-            <img src="creme.jpg" alt="Produit 2">
-            <div class="carousel-caption">exfoliant saveur amande</div>
+          <a href="expoire.html">
+            <img src="exfoliantv.png" alt="Produit 2">
+            <div class="carousel-caption"></div>
+          </a>
         </div>
         <div class="carousel-slide">
-            <img src="exfoliant.jpg" alt="Produit 3">
-            <div class="carousel-caption">exfoliant saveur jasmin</div>
-        </div>
-        <div class="carousel-slide">
-            <img src="exfoliant.jpg" alt="Produit 4">
-            <div class="carousel-caption">exfoliant saveur pomme</div>
-        </div>
-        <div class="carousel-slide">
-            <img src="exfoliant.jpg" alt="Produit 5">
-            <div class="carousel-caption">exfoliant saveur fleur de coton</div>
+          <a href="expoire.html">
+            <img src="coton.jpg" alt="Produit 3">
+            <div class="carousel-caption"></div>
+          </a>
         </div>
     </div>
 
@@ -149,27 +149,79 @@ document.querySelectorAll('.carousel').forEach(carousel => {
   updateCarousel();
 });
   </script>
-  <section class="carousel">
+<section class="carousel">
     <div class="carousel-container">
         <div class="carousel-slide">
-            <img src="creme.jpg" alt="Produit 1">
-            <div class="carousel-caption">exfoliant saveur Pamplemousse</div>
+          <a href="expomme.html">
+            <img src="exfoliant.jpg" alt="Produit 1">
+            <div class="carousel-caption">exfoliant saveur pomme camomille</div>
+          </a>
         </div>
         <div class="carousel-slide">
-            <img src="creme.jpg" alt="Produit 2">
-            <div class="carousel-caption">exfoliant saveur amande</div>
+          <a href="expomme.html">
+            <img src="exfoliantv.png" alt="Produit 2">
+            <div class="carousel-caption"></div>
+          </a>
         </div>
         <div class="carousel-slide">
-            <img src="exfoliant.jpg" alt="Produit 3">
-            <div class="carousel-caption">exfoliant saveur jasmin</div>
+          <a href="expomme.html">
+            <img src="serum.jpg" alt="Produit 3">
+            <div class="carousel-caption"></div>
+          </a>
+        </div>
+    </div>
+
+    <!-- Flèches -->
+    <button class="prev">&#10094;</button>
+    <button class="next">&#10095;</button>
+  </section>
+  <script>
+document.querySelectorAll('.carousel').forEach(carousel => {
+  const container = carousel.querySelector('.carousel-container');
+  const slides = carousel.querySelectorAll('.carousel-slide');
+  const prev = carousel.querySelector('.prev');
+  const next = carousel.querySelector('.next');
+
+  let index = 0;
+
+  function updateCarousel() {
+      slides.forEach((slide, i) => slide.classList.toggle('active', i === index));
+      container.style.transform = `translateX(-${index * 100}%)`;
+  }
+
+  next.addEventListener('click', () => {
+      index = (index + 1) % slides.length;
+      updateCarousel();
+  });
+
+  prev.addEventListener('click', () => {
+      index = (index - 1 + slides.length) % slides.length;
+      updateCarousel();
+  });
+
+  // initialisation
+  updateCarousel();
+});
+  </script>
+<section class="carousel">
+    <div class="carousel-container">
+        <div class="carousel-slide">
+           <a href="examande.html">
+            <img src="exfoliant.jpg" alt="Produit 1">
+            <div class="carousel-caption">Exfoliant saveur Amande fleur de coton</div>
+           </a>
+          </div>
+        <div class="carousel-slide">
+           <a href="panier.html"> 
+            <img src="exfoliantv.png" alt="Produit 2">
+            <div class="carousel-caption"></div>
+           </a>
         </div>
         <div class="carousel-slide">
-            <img src="exfoliant.jpg" alt="Produit 4">
-            <div class="carousel-caption">exfoliant saveur pomme</div>
-        </div>
-        <div class="carousel-slide">
-            <img src="exfoliant.jpg" alt="Produit 5">
-            <div class="carousel-caption">exfoliant saveur fleur de coton</div>
+          <a href="panier.html">  
+            <img src="serum.jpg" alt="Produit 3">
+            <div class="carousel-caption"></div>
+          </a>
         </div>
     </div>
 
@@ -206,16 +258,6 @@ document.querySelectorAll('.carousel').forEach(carousel => {
 });
   </script>
 </div>
-<script>document.querySelectorAll('.dropdown > a').forEach(link => {
-    link.addEventListener('click', function(e) {
-        const menu = this.nextElementSibling;
-        if(menu && menu.classList.contains('dropdown-menu')) {
-            e.preventDefault(); // empêche de suivre le lien
-            menu.classList.toggle('active'); // ouvre/ferme le menu
-        }
-    });
-});
-</script>
 <section class="contact" id="contact">
   <h2>Contactez-nous</h2>
   <p>Pour toute question ou suggestion, n’hésitez pas à nous écrire.</p>

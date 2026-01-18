@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <title>Panier - VAOSCOSMETICS</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
+  <style>
+    /* --- PANIER CSS --- */
+    .cart-container {
+      max-width: 1100px;
+      margin: 50px auto;
+      padding: 0 20px;
+    }
+
+    .cart-container h2 {
+      text-align: center;
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 2.5rem;
+      margin-bottom: 40px;
+      color: #584738;
+    }
+
+    .cart-items {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+    }
+
+    .cart-item {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+      background: white;
+      padding: 20px;
+      border-radius: 12px;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+      align-items: center;
+    }
+
+    .cart-item-img {
+      width: 150px;
+      height: 150px;
+      object-fit: cover;
+      border-radius: 12px;
+    }
+
+    .cart-item-info {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      font-family: 'Cormorant Garamond', serif;
+    }
+
+    .cart-item-info h3 {
+      margin: 0;
+      font-size: 1.2rem;
+      color: #584738;
+    }
+
+    .cart-item-info div {
+      font-size: 1rem;
+      color: #333;
+    }
+
+    .cart-item input.qty {
+      width: 60px;
+      padding: 5px;
+      font-size: 1rem;
+      border-radius: 5px;
+      border: 1px solid #ccc;
+    }
+
+    .cart-item button.remove {
+      background: #c28b6b;
+      color: white;
+      border: none;
+      padding: 8px 15px;
+      border-radius: 20px;
+      cursor: pointer;
+      font-size: 0.9rem;
+      align-self: start;
+    }
+
+    .cart-item button.remove:hover {
+      background: #a56f54;
+    }
+
+    .cart-total {
+      text-align: right;
+      margin-top: 20px;
+      font-size: 1.5rem;
+      font-weight: bold;
+      color: #584738;
+    }
+
+    /* Responsive */
+    @media (max-width: 768px) {
+      .cart-item {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+      .cart-item-img {
+        width: 100%;
+        height: auto;
+      }
+      .cart-item-info {
+        width: 100%;
+      }
+      .cart-total {
+        text-align: center;
+      }
+    }
+  </style>
+</head>
+<body>
+
+<header class="header">
+  <div class="header-top">
+    <div class="logo">
+      <img src="vaos.png" alt="Logo VAOS">
+    </div>
+    <div class="titre">
+      <h1>VAOSCOSMETICS</h1>
+    </div>
+  </div>
+  <div class="navbar1">
+    <nav class="navbar">
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+          <li class="dropdown">
+            <a>Nos Produits</a>
+              <ul class="dropdown-menu">
+                <li><a href="exfoliant.html">Notres Gamme d'Exfoliants</a></li>
+                <li><a href="baumesalevres.html">Notre Gamme de Baumes à Lèvres</a></li>
+              </ul>
+          </li>
+        <li><a href="aboutus.html">About us</a></li>
+        <li><a href="#contact">Contact</a></li>
+        <li><a href="panier.html" class="cart-icon">
+            <img src="panier.png" alt="Panier">
+            </a>
+        </li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<div class="cart-container">
+  <h2>Votre Panier</h2>
+  <div class="cart-items"></div>
+  <div class="cart-total">Total : <span class="total">0.00 €</span></div>
+</div>
+
+<script>
+  // --- PANIER JS ---
+  function renderCart() {
+    const cartContainer = document.querySelector('.cart-items');
+    const cart = JSON.parse(localStorage.getItem('cart')) || [];
+    cartContainer.innerHTML = '';
+
+    let total = 0;
+
+    cart.forEach((item, index) => {
+      const itemTotal = item.price * item.qty;
+      total += itemTotal;
+
+      const div = document.createElement('div');
+      div.classList.add('cart-item');
+      div.innerHTML = `
+        <img src="${item.img}" alt="${item.name}" class="cart-item-img">
+        <div class="cart-item-info">
+          <h3>${item.name}</h3>
+          <div>Prix unitaire : ${item.price.toFixed(2)} €</div>
+          <div>
+            Quantité: <input type="number" min="1" value="${item.qty}" class="qty" data-index="${index}">
+          </div>
+          <div>Total produit : <span class="cart-item-price">${itemTotal.toFixed(2)}</span> €</div>
+          <button class="remove" data-index="${index}">Supprimer</button>
+        </div>
+      `;
+      cartContainer.appendChild(div);
+    });
+
+    document.querySelector('.total').textContent = total.toFixed(2) + " €";
+
+    // Changement quantité
+    document.querySelectorAll('.qty').forEach(input => {
+      input.addEventListener('change', e => {
+        const idx = e.target.dataset.index;
+        cart[idx].qty = parseInt(e.target.value);
+        localStorage.setItem('cart', JSON.stringify(cart));
+        renderCart();
+      });
+    });
+
+    // Supprimer produit
+    document.querySelectorAll('.remove').forEach(btn => {
+      btn.addEventListener('click', e => {
+        const idx = e.target.dataset.index;
+        cart.splice(idx, 1);
+        localStorage.setItem('cart', JSON.stringify(cart));
+        renderCart();
+      });
+    });
+  }
+
+  renderCart();
+</script>
+
+</body>
+</html>
