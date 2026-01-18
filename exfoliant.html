@@ -258,6 +258,16 @@ document.querySelectorAll('.carousel').forEach(carousel => {
 });
   </script>
 </div>
+<script>document.querySelectorAll('.dropdown > a').forEach(link => {
+    link.addEventListener('click', function(e) {
+        const menu = this.nextElementSibling;
+        if(menu && menu.classList.contains('dropdown-menu')) {
+            e.preventDefault(); // empêche de suivre le lien
+            menu.classList.toggle('active'); // ouvre/ferme le menu
+        }
+    });
+});
+</script>
 <section class="contact" id="contact">
   <h2>Contactez-nous</h2>
   <p>Pour toute question ou suggestion, n’hésitez pas à nous écrire.</p>
