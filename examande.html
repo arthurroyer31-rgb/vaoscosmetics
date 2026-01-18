@@ -195,34 +195,33 @@
 </div>
 
 <script>
-  const addBtn = document.getElementById('add-to-cart');
+    /* ===== TOAST ===== */
+function showToast(message) {
+  const toast = document.getElementById("toast");
+  toast.textContent = message;
+  toast.classList.add("show");
+  setTimeout(() => toast.classList.remove("show"), 5000);
+}
+/* ===== PANIER ===== */
+document.getElementById('add-to-cart').addEventListener('click', () => {
+  const qty = parseInt(document.getElementById('qty').value);
+  let cart = JSON.parse(localStorage.getItem('cart')) || [];
 
-  addBtn.addEventListener('click', () => {
-    const qty = parseInt(document.getElementById('qty').value);
+  const product = {
+    name: "Exfoliant Pomme Camomille",
+    price: 7,
+    qty: qty,
+    img: "exfoliant.jpg"
+  };
 
-    // Récupère le panier ou crée un tableau vide
-    let cart = JSON.parse(localStorage.getItem('cart')) || [];
+  const index = cart.findIndex(item => item.name === product.name);
+  if (index !== -1) cart[index].qty += qty;
+  else cart.push(product);
 
-    const product = {
-      name: "Exfoliant Amande fleur de coton",
-      price: 7.00,
-      qty: qty,
-      img: "exfoliant.jpg"
-    };
-
-    // Vérifie si le produit existe déjà
-    const index = cart.findIndex(item => item.name === product.name);
-    if(index !== -1) {
-      cart[index].qty += qty; // ajoute la quantité
-    } else {
-      cart.push(product);
-    }
-
-    localStorage.setItem('cart', JSON.stringify(cart));
-
-    alert(`${qty} produit(s) ajouté(s) au panier !`);
-  });
+  localStorage.setItem('cart', JSON.stringify(cart));
+  showToast("Produit ajouté au panier");
+});
 </script>
-
+<div id="toast" class="toast">Produit ajouté au panier</div>
 </body>
 </html>
