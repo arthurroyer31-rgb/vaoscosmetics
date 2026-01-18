@@ -127,7 +127,7 @@
     <div class="carousel-container">
         <div class="carousel-slide">
             <img src="exfoliant.jpg" alt="Produit 1">
-            <div class="carousel-caption">Baume à Lèvres saveur poire jasmin</div>
+            <div class="carousel-caption">Baume à Lèvres Poire Jasmin</div>
         </div>
         <div class="carousel-slide">
             <img src="creme.jpg" alt="Produit 2">
@@ -183,8 +183,9 @@
   <div class="product-info">
     <h2>Baume à Lèvres Poire jasmin</h2>
     <p>
-      Soin nourrissant et hydratant pour des lèvres douces et parfumées.
-      Formule naturelle avec des actifs végétaux sélectionnés.
+      Soin nourrissant et intensément hydratant, ce baume à lèvres enveloppe les lèvres d’un voile de douceur tout en les protégeant durablement du dessèchement. Sa formule d’origine naturelle, enrichie en actifs végétaux soigneusement sélectionnés, nourrit en profondeur et restaure le confort des lèvres, même les plus sèches.
+      Son parfum délicat de jasmin et de poire offre une expérience sensorielle raffinée, alliant la fraîcheur fruitée de la poire à l’élégance florale du jasmin. Les lèvres sont souples, lisses et subtilement parfumées, sans effet collant.
+
     </p>
     <div class="price">8,00 €</div>
     <div>
@@ -208,7 +209,7 @@ document.getElementById('add-to-cart').addEventListener('click', () => {
   let cart = JSON.parse(localStorage.getItem('cart')) || [];
 
   const product = {
-    name: "Baume à lèvres saveur Poire jasmin",
+    name: "Baume à Lèvres Poire Jasmin",
     price: 8,
     qty: qty,
     img: "exfoliant.jpg"
@@ -223,5 +224,22 @@ document.getElementById('add-to-cart').addEventListener('click', () => {
 });
 </script>
 <div id="toast" class="toast">Produit ajouté au panier</div>
+<section class="contact" id="contact">
+  <h2>Contactez-nous</h2>
+  <p>Pour toute question ou suggestion, n’hésitez pas à nous écrire.</p>
+
+  <form action="https://formspree.io/f/xvzzolvp" method="POST">
+  <input type="text" name="name" placeholder="Nom" required>
+  <input type="email" name="email" placeholder="Email" required>
+  <textarea name="message" placeholder="Message"></textarea>
+  <button type="submit">Envoyer</button>
+</form>
+
+</section>
+
+<footer class="footer">
+  <p>© 2026 VAOSCOSMETICS – Tous droits réservés</p>
+</footer>
+
 </body>
 </html>

@@ -127,7 +127,7 @@
     <div class="carousel-container">
         <div class="carousel-slide">
             <img src="exfoliant.jpg" alt="Produit 1">
-            <div class="carousel-caption">Exfoliant saveur Amande fleur de coton</div>
+            <div class="carousel-caption">Exfoliant à Lèvres Amande Fleur de Coton</div>
         </div>
         <div class="carousel-slide">
             <img src="creme.jpg" alt="Produit 2">
@@ -183,8 +183,8 @@
   <div class="product-info">
     <h2>Exfoliant saveur Amande fleur de coton</h2>
     <p>
-      Soin nourrissant et hydratant pour des lèvres douces et parfumées.
-      Formule naturelle avec des actifs végétaux sélectionnés.
+        Cet exfoliant pour les lèvres élimine en douceur les cellules mortes et lisse la surface des lèvres, tout en respectant leur sensibilité. Sa formule d’origine naturelle, enrichie en actifs végétaux et grains exfoliants doux, aide à retrouver des lèvres nettes et soyeuses.
+        Le parfum réconfortant d’amande, associé aux notes poudrées de la fleur de coton, procure un moment cocooning. Les lèvres sont douces, lisses et délicatement parfumées, prêtes à être nourries.
     </p>
     <div class="price">7,00 €</div>
     <div>
@@ -208,7 +208,7 @@ document.getElementById('add-to-cart').addEventListener('click', () => {
   let cart = JSON.parse(localStorage.getItem('cart')) || [];
 
   const product = {
-    name: "Exfoliant Pomme Camomille",
+    name: "Exfoliant à Lèvres Pomme Camomille",
     price: 7,
     qty: qty,
     img: "exfoliant.jpg"
@@ -223,5 +223,22 @@ document.getElementById('add-to-cart').addEventListener('click', () => {
 });
 </script>
 <div id="toast" class="toast">Produit ajouté au panier</div>
+<section class="contact" id="contact">
+  <h2>Contactez-nous</h2>
+  <p>Pour toute question ou suggestion, n’hésitez pas à nous écrire.</p>
+
+  <form action="https://formspree.io/f/xvzzolvp" method="POST">
+  <input type="text" name="name" placeholder="Nom" required>
+  <input type="email" name="email" placeholder="Email" required>
+  <textarea name="message" placeholder="Message"></textarea>
+  <button type="submit">Envoyer</button>
+</form>
+
+</section>
+
+<footer class="footer">
+  <p>© 2026 VAOSCOSMETICS – Tous droits réservés</p>
+</footer>
+
 </body>
 </html>
