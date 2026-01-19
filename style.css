@@ -341,6 +341,7 @@ body {
     overflow: hidden;
     border-radius: 15px;
     box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+    width: 100%;
 }
 .carousel-slide a {
     display: block;
@@ -355,27 +356,28 @@ body {
 }
 
 .carousel-slide {
-    min-width: 100%;
     position: relative;
+    flex: 0 0 100%;
 }
 
 .carousel-slide img {
     width: 100%;
-    display: block;
-    pointer-events: none;
+    height: auto;        /* hauteur s'adapte au ratio de l'image */
+  display: block;
+  object-fit: contain;  /* l'image garde son ratio sans couper */
 }
 
 .carousel-caption {
     position: absolute;
-    bottom: 20px;
+    bottom: 10px;
     left: 50%;
     transform: translateX(-50%);
     background: rgba(255,255,255,0.7);
-    padding: 10px 20px;
+    padding: 8px 14px;
     text-align: center;
     border-radius: 10px;
     font-family: 'Cormorant Garamond', serif;
-    font-size: clamp(0.5rem, 4vw, 1rem);
+    font-size: clamp(0.8rem, 2vw, 1rem);
     min-width: relative;      /* largeur minimale */
     max-width: 80%;
     pointer-events: none;
@@ -559,7 +561,7 @@ body {
 /* Image */
 .split-image img {
   width: 100%;
-  height: 600px;
+  height: 400px;
   object-fit: cover;
   border-radius: 18px;
   box-shadow: 0 15px 40px rgba(0,0,0,0.15);
