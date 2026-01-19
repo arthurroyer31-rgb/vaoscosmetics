@@ -79,19 +79,20 @@ body {
 
 .header-top {
   display: flex;
-  flex-wrap: wrap; /* permet aux éléments de passer à la ligne si trop larges */
+  flex-wrap: nowrap; /* permet aux éléments de passer à la ligne si trop larges */
   align-items: center; /* aligne verticalement logo, titre et panier */
   justify-content: center; /* espace entre logo/titre et panier */
   width: 100%;
   max-width: 100vw;
   padding: 0 10px; /* petit padding pour ne pas toucher les bords */
   box-sizing: border-box;
-  gap: 10px;
+  gap: 15px;
   height: 100px;
-  font-size:clamp(0.5rem, 5vw, 1rem)        /* espace entre logo et titre */
+  position:relative;
+  font-size: clamp(0.5rem, 5vw, 1rem);     /* espace entre logo et titre */
 }
 .logo{
-    flex-shrink: 0;
+    left: calc(50% - 150px); /* 150px = largeur approximative du titre/espacement */
 }
 .logo img {
     height: 120px;
@@ -111,6 +112,9 @@ body {
   .titre h1 {
     font-size: 1.4rem;
   }
+}
+.titre{
+    text-align: center;
 }
 .titre h1 {
   font-family: 'Cormorant Garamond', serif;
@@ -460,7 +464,7 @@ body {
 
 .card img {
   width: 100%;
-  height: 400px;
+  height: 300px;
   object-fit: cover;
   object-position: center;
 }
@@ -473,6 +477,7 @@ body {
 .card p {
   margin: 0 14px 14px;
   color: #777;
+  font-family: 'Cormorant Garamond', serif;
 }
 @media (max-width: 480px) {
   .card img {
@@ -594,3 +599,10 @@ input[type="number"] {
         opacity: 1;
         transform: translateY(0);
     }
+.cards aboutusp {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(1rem, 5vw, 1.5rem);
+  font-weight: 700;
+  color: #584738;
+  
+}
