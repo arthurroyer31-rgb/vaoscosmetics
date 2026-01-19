@@ -441,20 +441,31 @@ body {
     pointer-events: auto;
 }
 .cards {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-  gap: 80px;
-  padding: 60px 20px;
-  max-width: 1200px;
+  display: flex;
+  flex-direction: column; /* empile les cartes verticalement */
+  gap: 40px;
+  max-width: 1000px;
   margin: auto;
+  padding: 40px 20px;
 }
 
 .card {
-  background: white;
-  border-radius: 16px;
-  overflow: hidden;
-  box-shadow: 0 10px 30px rgba(0,0,0,0.1);
-  transition: transform 0.4s ease, box-shadow 0.4s ease;
+    display: flex;
+    flex-direction: column; /* met les éléments verticalement */
+    align-items: center;    /* centre le contenu horizontalement */
+    background: white;
+    border-radius: 16px;
+    overflow: hidden;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+    padding: 15px;
+    text-align: center; /* centre le texte sous l'image */
+    opacity: 0;                /* initial invisible pour l'animation */
+    transform: translateY(40px); /* descend un peu */
+    transition: all 0.7s ease-out;
+}
+.card.visible {
+  opacity: 1;
+  transform: translateY(0);
 }
 
 .card:hover {
@@ -463,34 +474,47 @@ body {
 }
 
 .card img {
-  width: 100%;
-  height: 300px;
-  object-fit: cover;
-  object-position: center;
+    width: 100%;
+    height: 300px;
+    object-fit: cover;
+    border-radius: 12px;
+    margin-bottom: 15px; /* espace entre image et texte */
 }
 
 .card h3 {
-  margin: 12px 14px 6px;
+  margin: 12px 0px 5px;
   font-family: 'Cormorant Garamond', serif;
 }
 
-.card p {
-  margin: 0 14px 14px;
-  color: #777;
+.cards p {
+  margin: 0 0px 10px;
+  color: #584738;
   font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(1rem, 2vw, 1.2rem);
 }
-@media (max-width: 480px) {
+/* Première card prend presque toute la largeur */
+.cards .card:first-child {
+  max-width: 100%;
+}
+
+/* MOBILE */
+@media (max-width: 768px) {
+  .cards {
+    padding: 20px 10px;
+    gap: 30px;
+  }
+  .card h3 {
+    font-size: 1.4rem;
+  }
+  .card p {
+    font-size: 1rem;
+  }
   .card img {
     height: 220px;
   }
 }
-.cards {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-  gap: 15px;
-  max-width: 100%;
-  margin: auto;
-}
+
+
 
 .split-image img {
   width: 100%;
@@ -599,10 +623,3 @@ input[type="number"] {
         opacity: 1;
         transform: translateY(0);
     }
-.cards aboutusp {
-  font-family: 'Cormorant Garamond', serif;
-  font-size: clamp(1rem, 5vw, 1.5rem);
-  font-weight: 700;
-  color: #584738;
-  
-}

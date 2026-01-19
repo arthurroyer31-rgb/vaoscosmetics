@@ -42,15 +42,40 @@
 </header>
 <section class="cards">
   <div class="card">
-    <img src="" alt="">
+    <img src="fonda.jpg" alt="">
     <h3>Soin Visage</h3>
     <p>Hydratation intense</p>
   </div>
-  <div><aboutusp>Notre marque est née d’une volonté simple : proposer des soins pour les lèvres efficaces, naturels et respectueux, sans compromis sur les valeurs. Nous sélectionnons avec soin des actifs végétaux et développons des formules douces, adaptées à tous les types de lèvres.
+  <div class="card">
+       <p>Notre marque est née d’une volonté simple : proposer des soins pour les lèvres efficaces, naturels et respectueux, sans compromis sur les valeurs. Nous sélectionnons avec soin des actifs végétaux et développons des formules douces, adaptées à tous les types de lèvres.
           Conformément à la réglementation française et européenne, aucun de nos produits n’est testé sur les animaux. Cet engagement est au cœur de nos valeurs, tout comme le choix de formules 100 % vegan, sans aucun ingrédient d’origine animale.
           Entreprise détenue par une femme, notre marque met également à l’honneur le fait main, avec des soins conçus et fabriqués par une femme, dans une démarche artisanale, responsable et authentique.
           Nous croyons en une cosmétique plus consciente, où qualité, sensorialité, transparence et éthique vont de pair. Chaque produit est pensé pour prendre soin de vos lèvres tout en respectant la nature et le vivant.
-       </aboutusp>
+       </p>
+  </div>
+</section>
+<script>document.querySelectorAll('.dropdown > a').forEach(link => {
+    link.addEventListener('click', function(e) {
+        const menu = this.nextElementSibling;
+        if(menu && menu.classList.contains('dropdown-menu')) {
+            e.preventDefault(); // empêche de suivre le lien
+            menu.classList.toggle('active'); // ouvre/ferme le menu
+        }
+    });
+});
+</script>
+<section class="cards">
+  <div class="card">
+    <img src="fonda.jpg" alt="">
+    <h3>Soin Visage</h3>
+    <p>Hydratation intense</p>
+  </div>
+  <div class="card">
+       <p>Notre marque est née d’une volonté simple : proposer des soins pour les lèvres efficaces, naturels et respectueux, sans compromis sur les valeurs. Nous sélectionnons avec soin des actifs végétaux et développons des formules douces, adaptées à tous les types de lèvres.
+          Conformément à la réglementation française et européenne, aucun de nos produits n’est testé sur les animaux. Cet engagement est au cœur de nos valeurs, tout comme le choix de formules 100 % vegan, sans aucun ingrédient d’origine animale.
+          Entreprise détenue par une femme, notre marque met également à l’honneur le fait main, avec des soins conçus et fabriqués par une femme, dans une démarche artisanale, responsable et authentique.
+          Nous croyons en une cosmétique plus consciente, où qualité, sensorialité, transparence et éthique vont de pair. Chaque produit est pensé pour prendre soin de vos lèvres tout en respectant la nature et le vivant.
+       </p>
   </div>
 </section>
 <script>document.querySelectorAll('.dropdown > a').forEach(link => {
@@ -77,6 +102,24 @@
 <footer class="footer">
   <p>© 2026 PureSkin – Tous droits réservés</p>
 </footer>
+<script>
+  // Sélectionne toutes les cartes
+  const cards = document.querySelectorAll('.card');
 
+  function revealOnScroll() {
+    const triggerBottom = window.innerHeight * 0.85;
+
+    cards.forEach(card => {
+      const cardTop = card.getBoundingClientRect().top;
+
+      if(cardTop < triggerBottom){
+        card.classList.add('visible');
+      }
+    });
+  }
+
+  window.addEventListener('scroll', revealOnScroll);
+  window.addEventListener('load', revealOnScroll); // pour afficher si déjà visible
+</script>
 </body>
 </html>
