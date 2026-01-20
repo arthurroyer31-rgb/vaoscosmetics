@@ -163,7 +163,7 @@
   </div>
 </header>
 
-<div class="product-page">
+<div class="product-page fade-in-scroll">
   <section class="carousel">
     <div class="carousel-container">
         <div class="carousel-slide">
@@ -263,7 +263,7 @@ document.getElementById('add-to-cart').addEventListener('click', () => {
 });
 </script>
 <div id="toast" class="toast">Produit ajouté au panier</div>
-<section class="contact" id="contact">
+<section class="contact fade-in-scroll" id="contact">
   <h2>Contactez-nous</h2>
   <p>Pour toute question ou suggestion, n’hésitez pas à nous écrire.</p>
 
@@ -288,6 +288,27 @@ document.getElementById('add-to-cart').addEventListener('click', () => {
 <footer class="footer">
   <p>© 2026 VAOSCOSMETICS – Tous droits réservés</p>
 </footer>
+<script>
+// JS pour activer l'effet sur tous les éléments
+const faders = document.querySelectorAll('.fade-in-scroll');
 
+const appearOptions = {
+  threshold: 0.1,
+  rootMargin: "0px 0px -50px 0px"
+};
+
+const appearOnScroll = new IntersectionObserver((entries, observer) => {
+  entries.forEach(entry => {
+    if(entry.isIntersecting) {
+      entry.target.classList.add('visible');
+      observer.unobserve(entry.target);
+    }
+  });
+}, appearOptions);
+
+faders.forEach(fader => {
+  appearOnScroll.observe(fader);
+});
+</script>
 </body>
 </html>

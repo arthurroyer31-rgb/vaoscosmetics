@@ -148,7 +148,7 @@
   </div>
 </header>
 
-<div class="cart-container">
+<div class="cart-container fade-in-scroll">
   <h2>Votre Panier</h2>
   <div class="cart-items"></div>
   <div class="cart-total">Total : <span class="total">0.00 €</span></div>
@@ -209,7 +209,7 @@
 
   renderCart();
 </script>
-<section class="contact" id="contact">
+<section class="contact fade-in-scroll" id="contact">
   <h2>Contactez-nous</h2>
   <p>Pour toute question ou suggestion, n’hésitez pas à nous écrire.</p>
 
@@ -235,6 +235,27 @@
     });
 });
 </script>
+<script>
+// JS pour activer l'effet sur tous les éléments
+const faders = document.querySelectorAll('.fade-in-scroll');
 
+const appearOptions = {
+  threshold: 0.1,
+  rootMargin: "0px 0px -50px 0px"
+};
+
+const appearOnScroll = new IntersectionObserver((entries, observer) => {
+  entries.forEach(entry => {
+    if(entry.isIntersecting) {
+      entry.target.classList.add('visible');
+      observer.unobserve(entry.target);
+    }
+  });
+}, appearOptions);
+
+faders.forEach(fader => {
+  appearOnScroll.observe(fader);
+});
+</script>
 </body>
 </html>

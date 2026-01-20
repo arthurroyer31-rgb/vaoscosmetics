@@ -39,7 +39,7 @@
     </a>
   </div>
 </header>
-<section class="split-section">
+<section class="split-section fade-in-scroll">
   <div class="split-text">
     <h2>Soin d’Exception</h2>
     <p>
@@ -52,7 +52,7 @@
   </div>
 </section>
 
-<section class="split-section reverse">
+<section class="split-section reverse fade-in-scroll">
   <div class="split-text">
     <h2>Ingrédients Sélectionnés</h2>
     <p>
@@ -65,7 +65,7 @@
   </div>
 </section>
 
-<section class="split-section">
+<section class="split-section fade-in-scroll">
   <div class="split-text">
     <h2>Rituel Sensoriel</h2>
     <p>
@@ -88,7 +88,7 @@ document.querySelectorAll('.dropdown > a').forEach(link => {
     });
 });
 </script>
-<section class="contact" id="contact">
+<section class="contact fade-in-scroll" id="contact">
   <h2>Contactez-nous</h2>
   <p>Pour toute question ou suggestion, n’hésitez pas à nous écrire.</p>
 
@@ -104,6 +104,26 @@ document.querySelectorAll('.dropdown > a').forEach(link => {
 <footer class="footer">
   <p>© 2026 VAOSCOSMETICS – Tous droits réservés</p>
 </footer>
+<script>// JS pour activer l'effet sur tous les éléments
+const faders = document.querySelectorAll('.fade-in-scroll');
 
+const appearOptions = {
+  threshold: 0.1,
+  rootMargin: "0px 0px -50px 0px"
+};
+
+const appearOnScroll = new IntersectionObserver((entries, observer) => {
+  entries.forEach(entry => {
+    if(entry.isIntersecting) {
+      entry.target.classList.add('visible');
+      observer.unobserve(entry.target);
+    }
+  });
+}, appearOptions);
+
+faders.forEach(fader => {
+  appearOnScroll.observe(fader);
+});
+</script>
 </body>
 </html>

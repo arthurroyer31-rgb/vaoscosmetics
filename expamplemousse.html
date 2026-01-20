@@ -122,7 +122,7 @@
 </header>
 
 <div class="product-page">
-  <section class="carousel">
+  <section class="carousel fade-in-scroll">
     <div class="carousel-container">
         <div class="carousel-slide">
             <img src="exfoliant.jpg" alt="Produit 1">
@@ -179,7 +179,7 @@
   updateCarousel();
 });
     </script>
-  <div class="product-info">
+  <div class="product-info fade-in-scroll">
     <h2>Exfoliant à Lèvres Pamplemousse rose</h2>
     <p>
       Soin exfoliant doux et revitalisant, cet exfoliant pour les lèvres aide à éliminer les impuretés et peaux sèches tout en stimulant le renouvellement cutané. Sa formule naturelle, à base d’actifs végétaux et exfoliants délicats, respecte les lèvres même les plus sensibles.
@@ -222,7 +222,7 @@ document.getElementById('add-to-cart').addEventListener('click', () => {
 });
 </script>
 <div id="toast" class="toast">Produit ajouté au panier</div>
-<section class="contact" id="contact">
+<section class="contact fade-in-scroll" id="contact">
   <h2>Contactez-nous</h2>
   <p>Pour toute question ou suggestion, n’hésitez pas à nous écrire.</p>
 
@@ -246,6 +246,28 @@ document.getElementById('add-to-cart').addEventListener('click', () => {
             menu.classList.toggle('active'); // ouvre/ferme le menu
         }
     });
+});
+</script>
+<script>
+// JS pour activer l'effet sur tous les éléments
+const faders = document.querySelectorAll('.fade-in-scroll');
+
+const appearOptions = {
+  threshold: 0.1,
+  rootMargin: "0px 0px -50px 0px"
+};
+
+const appearOnScroll = new IntersectionObserver((entries, observer) => {
+  entries.forEach(entry => {
+    if(entry.isIntersecting) {
+      entry.target.classList.add('visible');
+      observer.unobserve(entry.target);
+    }
+  });
+}, appearOptions);
+
+faders.forEach(fader => {
+  appearOnScroll.observe(fader);
 });
 </script>
 </body>

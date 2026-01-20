@@ -40,7 +40,7 @@
     </a>
   </div>
 </header>
-<section class="cards">
+<section class="cards fade-in-scroll">
   <div class="card">
     <img src="fonda.jpg" alt="">
     <h3>Soin Visage</h3>
@@ -54,17 +54,7 @@
        </p>
   </div>
 </section>
-<script>document.querySelectorAll('.dropdown > a').forEach(link => {
-    link.addEventListener('click', function(e) {
-        const menu = this.nextElementSibling;
-        if(menu && menu.classList.contains('dropdown-menu')) {
-            e.preventDefault(); // empêche de suivre le lien
-            menu.classList.toggle('active'); // ouvre/ferme le menu
-        }
-    });
-});
-</script>
-<section class="cards">
+<section class="cards fade-in-scroll">
   <div class="card">
     <img src="fonda.jpg" alt="">
     <h3>Soin Visage</h3>
@@ -93,7 +83,7 @@ Une cosmétique naturelle, qualitative et gourmande, pensée comme un rituel.
     });
 });
 </script>
-<section class="contact" id="contact">
+<section class="contact fade-in-scroll" id="contact">
   <h2>Contactez-nous</h2>
   <p>Pour toute question ou suggestion, n’hésitez pas à nous écrire.</p>
 
@@ -108,23 +98,26 @@ Une cosmétique naturelle, qualitative et gourmande, pensée comme un rituel.
   <p>© 2026 PureSkin – Tous droits réservés</p>
 </footer>
 <script>
-  // Sélectionne toutes les cartes
-  const cards = document.querySelectorAll('.card');
+// JS pour activer l'effet sur tous les éléments
+const faders = document.querySelectorAll('.fade-in-scroll');
 
-  function revealOnScroll() {
-    const triggerBottom = window.innerHeight * 0.85;
+const appearOptions = {
+  threshold: 0.1,
+  rootMargin: "0px 0px -50px 0px"
+};
 
-    cards.forEach(card => {
-      const cardTop = card.getBoundingClientRect().top;
+const appearOnScroll = new IntersectionObserver((entries, observer) => {
+  entries.forEach(entry => {
+    if(entry.isIntersecting) {
+      entry.target.classList.add('visible');
+      observer.unobserve(entry.target);
+    }
+  });
+}, appearOptions);
 
-      if(cardTop < triggerBottom){
-        card.classList.add('visible');
-      }
-    });
-  }
-
-  window.addEventListener('scroll', revealOnScroll);
-  window.addEventListener('load', revealOnScroll); // pour afficher si déjà visible
+faders.forEach(fader => {
+  appearOnScroll.observe(fader);
+});
 </script>
 </body>
 </html>
