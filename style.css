@@ -11,7 +11,7 @@ html, body {
 }
 body {
     margin: 0;
-    background: #fafafa;
+    background: #f1eada;
     font-family: 'Roboto', sans-serif;
     color: #333;
 }
@@ -514,13 +514,39 @@ body {
 }
 
 
+/* =====================
+   TWO IMAGES FULL WIDTH
+===================== */
 
-.split-image img {
-  width: 100%;
-  height: 500px; /* réduit pour mobile */
-  object-fit: cover;
-  border-radius: 12px;
+.two-images {
+  position: relative;
+  left: 50%;
+  transform: translateX(-100%);
+
+  width: 100vw;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 10px
 }
+
+.two-images img {
+  width: 100%;
+  height: 60vh;          /* hauteur élégante desktop */
+  object-fit: cover;
+  display: block;
+}
+
+/* =====================
+   MOBILE
+===================== */
+
+@media (max-width: 768px) {
+
+  .two-images img {
+    height: 30vh;
+  }
+}
+
 .split-section {
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -558,7 +584,7 @@ body {
 /* Image */
 .split-image img {
   width: 100%;
-  height: 600px;
+  height: 450px;
   object-fit: cover;
   border-radius: 18px;
   box-shadow: 0 15px 40px rgba(0,0,0,0.15);
