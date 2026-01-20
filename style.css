@@ -543,7 +543,7 @@ body {
 @media (max-width: 768px) {
 
   .two-images img {
-    height: 30vh;
+    height: 20vh;
   }
 }
 
@@ -658,4 +658,5 @@ input[type="number"] {
 .fade-in-scroll.visible {
   opacity: 1;
   transform: translateY(0);
+
 }
