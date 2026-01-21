@@ -752,10 +752,10 @@ input[type="number"] {
 @media (max-width: 768px) {
   .pc-card {
     flex: 0 0 80%;
-    height: 400px;
+    height: 300px;
   }
 .pc-card img {
-    height: 400px;
+    height: 300px;
 }
 .pc-caption {
     bottom: 14px;
