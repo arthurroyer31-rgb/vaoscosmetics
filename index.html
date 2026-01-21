@@ -27,7 +27,9 @@
             <a>Nos Produits</a>
               <ul class="dropdown-menu">
                 <li><a href="exfoliant.html">Notres Gamme d'Exfoliants</a></li>
+                <li><a href="exvisage.html">Notre Gamme d'Exfoliants visage</a></li>
                 <li><a href="baumesalevres.html">Notre Gamme de Baumes à Lèvres</a></li>
+                <li><a href="shamp.html">Notre Gamme de Shampoings</a></li>
               </ul>
           </li>
         <li><a href="aboutus.html">About us</a></li>
@@ -53,11 +55,11 @@
 </section>
 
 <section class="two-images fade-in-scroll">
-  <div class="two-images">
+  
     <img src="exh.jpeg" alt="Ingrédients premium">
     <img src="exfolianth.jpg" alt="ingredients premium">
     <img src="home.jpeg" alt="Ingrédients premium">
-  </div>
+  
 </section>
 
 <section class="split-section reverse fade-in-scroll">
@@ -83,279 +85,103 @@ document.querySelectorAll('.dropdown > a').forEach(link => {
     });
 });
 </script>
-<div class="carousel-row">
-    <section class="carousel fade-in-scroll">
-    <div class="carousel-container">
-        <div class="carousel-slide">
-          <a href="balpoire.html">
-            <img src="exfoliant.jpg" alt="Produit 1">
-            <div class="carousel-caption">Baume à Lèvres Poire Jasmin</div>
-          </a>
+<section class="product-carousel">
+
+  <button class="pc-arrow left">&#10094;</button>
+
+  <div class="pc-viewport">
+    <div class="pc-track">
+
+      <a href="produit1.html" class="pc-card">
+        <img src="baume.png" alt="Produit 1">
+        <div class="pc-caption">
+          <h3>Produit 1</h3>
+          <p>29,90€</p>
         </div>
-        <div class="carousel-slide">
-          <a href="balpoire.html">
-            <img src="baume1.jpg" alt="Produit 2">
-            <div class="carousel-caption"></div>
-          </a>
+      </a>
+
+      <a href="produit2.html" class="pc-card">
+        <img src="prod2.jpg" alt="Produit 2">
+        <div class="pc-caption">
+          <h3>Produit 1</h3>
+          <p>29,90€</p>
         </div>
-        <div class="carousel-slide">
-          <a href="balpoire.html">
-            <img src="creme.jpg" alt="Produit 2">
-            <div class="carousel-caption"></div>
-          </a>
+      </a>
+
+      <a href="produit3.html" class="pc-card">
+        <img src="prod3.jpg" alt="Produit 3">
+        <div class="pc-caption">
+          <h3>Produit 1</h3>
+          <p>29,90€</p>
         </div>
-        <div class="carousel-slide">
-          <a href="balpoire.html">
-            <img src="creme.jpg" alt="Produit 2">
-            <div class="carousel-caption"></div>
-          </a>
+      </a>
+
+      <a href="produit4.html" class="pc-card">
+        <img src="prod4.jpg" alt="Produit 4">
+        <div class="pc-caption">
+          <h3>Produit 1</h3>
+          <p>29,90€</p>
         </div>
-        <div class="carousel-slide">
-          <a href="balpoire.html">
-            <img src="creme.jpg" alt="Produit 2">
-            <div class="carousel-caption"></div>
-          </a>
+      </a>
+
+      <a href="produit5.html" class="pc-card">
+        <img src="prod5.jpg" alt="Produit 5">
+        <div class="pc-caption">
+          <h3>Produit 1</h3>
+          <p>29,90€</p>
         </div>
+      </a>
+      
+
     </div>
-    
+  </div>
 
-    <!-- Flèches -->
-    <button class="prev">&#10094;</button>
-    <button class="next">&#10095;</button>
-    </section>
-    <script>
-    document.querySelectorAll('.carousel').forEach(carousel => {
-  const container = carousel.querySelector('.carousel-container');
-  const slides = carousel.querySelectorAll('.carousel-slide');
-  const prev = carousel.querySelector('.prev');
-  const next = carousel.querySelector('.next');
+  <button class="pc-arrow right">&#10095;</button>
+</section>
+<script>
+const carousel = document.querySelector('.product-carousel');
+const track = carousel.querySelector('.pc-track');
+const cards = carousel.querySelectorAll('.pc-card');
+const prev = carousel.querySelector('.pc-arrow.left');
+const next = carousel.querySelector('.pc-arrow.right');
 
-  let index = 0;
+let index = 0;
 
-  function updateCarousel() {
-      slides.forEach((slide, i) => slide.classList.toggle('active', i === index));
-      container.style.transform = `translateX(-${index * 100}%)`;
-  }
+function getVisibleCards() {
+  if (window.innerWidth <= 600) return 1;
+  if (window.innerWidth <= 1024) return 2;
+  return 4;
+}
 
-  next.addEventListener('click', () => {
-      index = (index + 1) % slides.length;
-      updateCarousel();
-  });
+function updateCarousel() {
+  const gap = 20;
+  const cardWidth = cards[0].offsetWidth + gap;
+  const maxIndex = cards.length - getVisibleCards();
 
-  prev.addEventListener('click', () => {
-      index = (index - 1 + slides.length) % slides.length;
-      updateCarousel();
-  });
+  if (index < 0) index = 0;
+  if (index > maxIndex) index = maxIndex;
 
-  // initialisation
+  track.style.transform = `translateX(-${index * cardWidth}px)`;
+}
+
+next.addEventListener('click', () => {
+  index++;
   updateCarousel();
 });
-    </script>
 
-    <section class="carousel fade-in-scroll">
-    <div class="carousel-container">
-        <div class="carousel-slide">
-          <a href="balamande.html">
-            <img src="exfoliant.jpg" alt="Produit 1">
-            <div class="carousel-caption">Baume à Lèvres Amande Fleur de Coton</div>
-          </a>
-        </div>
-        <div class="carousel-slide">
-          <a href="balamande.html">
-            <img src="creme.jpg" alt="Produit 2">
-            <div class="carousel-caption"></div>
-          </a>
-        </div>
-        <div class="carousel-slide">
-          <a href="balamande.html">
-            <img src="creme.jpg" alt="Produit 2">
-            <div class="carousel-caption"></div>
-          </a>
-        </div>
-        <div class="carousel-slide">
-          <a href="balamande.html">
-            <img src="creme.jpg" alt="Produit 2">
-            <div class="carousel-caption"></div>
-          </a>
-        </div>
-        <div class="carousel-slide">
-          <a href="balamande.html">
-            <img src="creme.jpg" alt="Produit 2">
-            <div class="carousel-caption"></div>
-          </a>
-        </div>
-    </div>
-    
-
-    <!-- Flèches -->
-    <button class="prev">&#10094;</button>
-    <button class="next">&#10095;</button>
-    </section>
-    <script>
-    document.querySelectorAll('.carousel').forEach(carousel => {
-  const container = carousel.querySelector('.carousel-container');
-  const slides = carousel.querySelectorAll('.carousel-slide');
-  const prev = carousel.querySelector('.prev');
-  const next = carousel.querySelector('.next');
-
-  let index = 0;
-
-  function updateCarousel() {
-      slides.forEach((slide, i) => slide.classList.toggle('active', i === index));
-      container.style.transform = `translateX(-${index * 100}%)`;
-  }
-
-  next.addEventListener('click', () => {
-      index = (index + 1) % slides.length;
-      updateCarousel();
-  });
-
-  prev.addEventListener('click', () => {
-      index = (index - 1 + slides.length) % slides.length;
-      updateCarousel();
-  });
-
-  // initialisation
+prev.addEventListener('click', () => {
+  index--;
   updateCarousel();
 });
-    </script>
 
-    <section class="carousel fade-in-scroll">
-    <div class="carousel-container">
-        <div class="carousel-slide">
-          <a href="balpamplemousse.html">
-            <img src="baume.png" alt="Produit 7">
-            <div class="carousel-caption">Baume à Lèvres Pamplemousse Rose</div>
-          </a>
-        </div>
-        <div class="carousel-slide">
-          <a href="balpamplemousse.html">
-            <img src="creme.jpg" alt="Produit 2">
-            <div class="carousel-caption"></div>
-          </a>
-        </div>
-        <div class="carousel-slide">
-          <a href="balpamplemousse.html">
-            <img src="creme.jpg" alt="Produit 2">
-            <div class="carousel-caption"></div>
-          </a>
-        </div>
-        <div class="carousel-slide">
-          <a href="balpamplemousse.html">
-            <img src="creme.jpg" alt="Produit 2">
-            <div class="carousel-caption"></div>
-          </a>
-        </div>
-        <div class="carousel-slide">
-          <a href="balpamplemousse.html">
-            <img src="creme.jpg" alt="Produit 2">
-            <div class="carousel-caption"></div>
-          </a>
-        </div>
-    </div>
-    
-
-    <!-- Flèches -->
-    <button class="prev">&#10094;</button>
-    <button class="next">&#10095;</button>
-    </section>
-    <script>
-     document.querySelectorAll('.carousel').forEach(carousel => {
-        const container = carousel.querySelector('.carousel-container');
-        const slides = carousel.querySelectorAll('.carousel-slide');
-        const prev = carousel.querySelector('.prev');
-        const next = carousel.querySelector('.next');
-
-        let index = 0;
-
-        function updateCarousel() {
-            slides.forEach((slide, i) => slide.classList.toggle('active', i === index));
-            container.style.transform = `translateX(-${index * 100}%)`;
-    }
-
-    next.addEventListener('click', () => {
-      index = (index + 1) % slides.length;
-      updateCarousel();
-    });
-
-  prev.addEventListener('click', () => {
-      index = (index - 1 + slides.length) % slides.length;
-      updateCarousel();
-  });
-
-  // initialisation
+window.addEventListener('resize', () => {
+  index = 0;
   updateCarousel();
 });
-    </script>
 
-    <section class="carousel fade-in-scroll">
-    <div class="carousel-container">
-        <div class="carousel-slide">
-          <a href="balpomme.html">
-            <img src="baume2.png" alt="Produit 7">
-            <div class="carousel-caption">Baume à Lèvres Pomme Camomille</div>
-          </a>
-        </div>
-        <div class="carousel-slide">
-          <a href="balpomme.html">
-            <img src="creme.jpg" alt="Produit 2">
-            <div class="carousel-caption"></div>
-          </a>
-        </div>
-        <div class="carousel-slide">
-          <a href="balpomme.html">
-            <img src="baume1.jpeg" alt="Produit 2">
-            <div class="carousel-caption"></div>
-          </a>
-        </div>
-        <div class="carousel-slide">
-          <a href="balpomme.html">
-            <img src="baume.png" alt="Produit 2">
-            <div class="carousel-caption"></div>
-          </a>
-        </div>
-        <div class="carousel-slide">
-          <a href="balpomme.html">
-            <img src="coton.jpg" alt="Produit 2">
-            <div class="carousel-caption"></div>
-          </a>
-        </div>
-    </div>
-    
-
-    <!-- Flèches -->
-    <button class="prev">&#10094;</button>
-    <button class="next">&#10095;</button>
-    </section>
-    <script>
-     document.querySelectorAll('.carousel').forEach(carousel => {
-        const container = carousel.querySelector('.carousel-container');
-        const slides = carousel.querySelectorAll('.carousel-slide');
-        const prev = carousel.querySelector('.prev');
-        const next = carousel.querySelector('.next');
-
-        let index = 0;
-
-        function updateCarousel() {
-            slides.forEach((slide, i) => slide.classList.toggle('active', i === index));
-            container.style.transform = `translateX(-${index * 100}%)`;
-    }
-
-    next.addEventListener('click', () => {
-      index = (index + 1) % slides.length;
-      updateCarousel();
-    });
-
-  prev.addEventListener('click', () => {
-      index = (index - 1 + slides.length) % slides.length;
-      updateCarousel();
-  });
-
-  // initialisation
-  updateCarousel();
-});
-    </script>
-</div>
+// init
+updateCarousel();
+</script>
 <section class="contact fade-in-scroll" id="contact">
   <h2>Contactez-nous</h2>
   <p>Pour toute question ou suggestion, n’hésitez pas à nous écrire.</p>
