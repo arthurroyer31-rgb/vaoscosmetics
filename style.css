@@ -486,12 +486,28 @@ body {
   margin: 100px auto;
   padding: 0 20px;
 }
+.split-section1 {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 60px;
+  align-items: center;
+  max-width: 1200px;
+  margin: 100px auto;
+  padding: 0 20px;
+}
 
 .split-section.reverse {
   direction: rtl;
 }
+.split-section.reverse1 {
+  direction: rtl;
+  max-width: 1200px;
+}
 
 .split-section.reverse > * {
+  direction: ltr;
+}
+.split-section.reverse1 > * {
   direction: ltr;
 }
 
@@ -546,6 +562,10 @@ body {
 /* Mobile */
 @media (max-width: 768px) {
   .split-section {
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+  }
+  .split-section1 {
     grid-template-columns: 1fr 1fr;
     gap: 10px;
   }
