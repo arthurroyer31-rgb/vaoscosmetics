@@ -43,14 +43,15 @@
 </header>
 <section class="split-section fade-in-scroll">
   <div class="split-text">
-    <h2>Soin d’Exception</h2>
+    <h2></h2>
     <p>
-      Des formules haut de gamme conçues pour sublimer la peau avec élégance
-      et efficacité.
+      Nos soins sont formulés pour respecter et sublimer la peau au quotidien.
+Des ingrédients soigneusement sélectionnés, des textures sensorielles et une efficacité visible, pour une routine beauté simple, consciente et agréable.
+
     </p>
   </div>
   <div class="split-image">
-    <img src="miel.jpg" alt="Soin visage luxe">
+    <img src="shampoingla.jpeg" alt="Rituel cosmétique">
   </div>
 </section>
 
@@ -71,7 +72,7 @@
     </p>
   </div>
   <div class="split-image">
-    <img src="serum.jpg" alt="Rituel cosmétique">
+    <img src="miel.jpg" alt="Rituel cosmétique">
   </div>
 </section>
 <script>
@@ -92,43 +93,43 @@ document.querySelectorAll('.dropdown > a').forEach(link => {
   <div class="pc-viewport">
     <div class="pc-track">
 
-      <a href="produit1.html" class="pc-card">
+      <a href="baumesalevres.html" class="pc-card">
         <img src="baume.png" alt="Produit 1">
         <div class="pc-caption">
-          <h3>Produit 1</h3>
-          <p>29,90€</p>
+          <h3>Baumes à Lèvres</h3>
+          <p>8,00€</p>
         </div>
       </a>
 
-      <a href="produit2.html" class="pc-card">
-        <img src="prod2.jpg" alt="Produit 2">
+      <a href="shamp.html" class="pc-card">
+        <img src="shampoing.png" alt="Produit 2">
         <div class="pc-caption">
-          <h3>Produit 1</h3>
-          <p>29,90€</p>
+          <h3>Shampoings</h3>
+          <p>25,00€</p>
         </div>
       </a>
 
-      <a href="produit3.html" class="pc-card">
-        <img src="prod3.jpg" alt="Produit 3">
+      <a href="exfoliant.html" class="pc-card">
+        <img src="ex.jpeg" alt="Produit 3">
         <div class="pc-caption">
-          <h3>Produit 1</h3>
-          <p>29,90€</p>
+          <h3>Exfoliants</h3>
+          <p>7,50€</p>
         </div>
       </a>
 
-      <a href="produit4.html" class="pc-card">
-        <img src="prod4.jpg" alt="Produit 4">
+      <a href="exvisage.html" class="pc-card">
+        <img src="exfoliantv.png" alt="Produit 4">
         <div class="pc-caption">
-          <h3>Produit 1</h3>
-          <p>29,90€</p>
+          <h3>Exfoliants visage</h3>
+          <p>18,00€</p>
         </div>
       </a>
 
-      <a href="produit5.html" class="pc-card">
-        <img src="prod5.jpg" alt="Produit 5">
+      <a href="baumesalevres.html" class="pc-card">
+        <img src="baume1.jpeg" alt="Produit 5">
         <div class="pc-caption">
-          <h3>Produit 1</h3>
-          <p>29,90€</p>
+          <h3>Baume</h3>
+          <p>8,00€</p>
         </div>
       </a>
       
@@ -194,7 +195,27 @@ updateCarousel();
 </form>
 
 </section>
+<script>function updateCarousel() {
+  const gap = 20;
+  const visible = getVisibleCards();
+  const cardWidth = cards[0].offsetWidth + gap;
+  const maxIndex = cards.length - visible;
 
+  if (index < 0) index = 0;
+  if (index > maxIndex) index = maxIndex;
+
+  let offset = index * cardWidth;
+
+  // si sur mobile, recentre la carte
+  if (window.innerWidth <= 600) {
+    const viewportWidth = carousel.querySelector('.pc-viewport').offsetWidth;
+    offset = index * cardWidth - (viewportWidth - cards[0].offsetWidth) / 2;
+    if (offset < 0) offset = 0; // pas de débordement gauche
+  }
+
+  track.style.transform = `translateX(-${offset}px)`;
+}
+</script>
 <footer class="footer">
   <p>© 2026 VAOSCOSMETICS – Tous droits réservés</p>
 </footer>

@@ -337,7 +337,7 @@ body {
 
 .carousel {
     position: relative;
-    max-width: 300px;
+    max-width: 400px;
     margin: 50px auto;
     overflow: hidden;
     border-radius: 15px;
@@ -443,76 +443,7 @@ body {
 .carousel * {
     pointer-events: auto;
 }
-.cards {
-  display: flex;
-  flex-direction: column; /* empile les cartes verticalement */
-  gap: 40px;
-  max-width: 1000px;
-  margin: auto;
-  padding: 40px 20px;
-}
 
-.card {
-    display: flex;
-    flex-direction: column; /* met les éléments verticalement */
-    align-items: center;    /* centre le contenu horizontalement */
-    background: white;
-    border-radius: 16px;
-    overflow: hidden;
-    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
-    padding: 15px;
-    text-align: center; /* centre le texte sous l'image */
-}
-.card.visible {
-  opacity: 1;
-  transform: translateY(0);
-}
-
-.card:hover {
-  transform: translateY(-8px);
-  box-shadow: 0 20px 50px rgba(0,0,0,0.15);
-}
-
-.card img {
-    width: 100%;
-    height: 300px;
-    object-fit: cover;
-    border-radius: 12px;
-    margin-bottom: 15px; /* espace entre image et texte */
-}
-
-.card h3 {
-  margin: 12px 0px 5px;
-  font-family: 'Cormorant Garamond', serif;
-}
-
-.cards p {
-  margin: 0 0px 10px;
-  color: #584738;
-  font-family: 'Cormorant Garamond', serif;
-  font-size: clamp(1rem, 2vw, 1.2rem);
-}
-/* Première card prend presque toute la largeur */
-.cards .card:first-child {
-  max-width: 100%;
-}
-
-/* MOBILE */
-@media (max-width: 768px) {
-  .cards {
-    padding: 20px 10px;
-    gap: 30px;
-  }
-  .card h3 {
-    font-size: 1.4rem;
-  }
-  .card p {
-    font-size: 1rem;
-  }
-  .card img {
-    height: 220px;
-  }
-}
 
 
 /* =====================
@@ -551,7 +482,7 @@ body {
   grid-template-columns: 1fr 1fr;
   gap: 60px;
   align-items: center;
-  max-width: 1200px;
+  max-width: 2000px;
   margin: 100px auto;
   padding: 0 20px;
 }
@@ -572,18 +503,41 @@ body {
   color: #584738;
   margin-bottom: 20px;
 }
+.split-text1 h2 {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 2.4rem;
+  font-weight: 500;
+  color: #584738;
+  margin-bottom: 20px;
+}
 
 .split-text p {
-  font-size: 1.05rem;
+  font-size: clamp(1.05rem, 5vw, 2.5rem);
+  font-weight: 700;
   line-height: 1.8;
-  color: #666;
+  color: #584738;
   max-width: 480px;
+  font-family: 'Cormorant Garamond', serif;
+}
+.split-text1 p {
+  font-size: clamp(1.05rem, 5vw, 1.15rem);
+  line-height: 1.8;
+  color: #584738;
+  max-width: 480px;
+  font-family: 'Cormorant Garamond', serif;
 }
 
 /* Image */
 .split-image img {
   width: 100%;
-  height: 450px;
+  height: 700px;
+  object-fit: cover;
+  border-radius: 18px;
+  box-shadow: 0 15px 40px rgba(0,0,0,0.15);
+}
+.split-image1 img {
+  width: 100%;
+  height: 600px;
   object-fit: cover;
   border-radius: 18px;
   box-shadow: 0 15px 40px rgba(0,0,0,0.15);
@@ -597,13 +551,22 @@ body {
   }
 
   .split-image img {
-    height: 120px;
+    height: 250px;
+    font-size: 1.2rem;
+  }
+  .split-image1 img {
+    height: 400px;
     font-size: 1.2rem;
   }
 
   .split-text p {
     max-width: 100%;
     font-size: 0.85rem;
+    font-weight: 900px;
+  }
+  .split-text1 p {
+    max-width: 100%;
+    font-size: 0.70rem;
     
   }
 }
@@ -692,7 +655,8 @@ input[type="number"] {
 
 /* card */
 .pc-card {
-  flex: 0 0 calc(25% - 15px);
+  
+  flex: 0 0 calc(25% - 10px);
   position: relative;
   height: 400px;                /* contrôle réel de la hauteur */
   border-radius: 20px;
@@ -787,8 +751,8 @@ input[type="number"] {
 /* mobile */
 @media (max-width: 768px) {
   .pc-card {
-    flex: 0 0 85%;
-    height: 360px;
+    flex: 0 0 80%;
+    height: 400px;
   }
 .pc-card img {
     height: 400px;
@@ -796,6 +760,10 @@ input[type="number"] {
 .pc-caption {
     bottom: 14px;
     padding: 8px 14px;
+  }
+.pc-viewport {
+    overflow: hidden;
+    width:100%
   }
 
 .pc-caption h3 {
@@ -806,8 +774,24 @@ input[type="number"] {
     font-size: 0.9rem;
 }
 .pc-track {
-    padding: 20px;
+    display: flex;
+    transition: transform 0.4s ease;
+}
 }
 
+.video-wrapper {
+  width: 100%;          /* prend toute la largeur disponible */
+  max-width: 600px;     /* largeur maximale si tu veux limiter */
+  height: 700px;        /* hauteur que tu veux */
+  margin: auto;          /* centre horizontalement */
+  overflow: hidden;
+  border-radius: 20px;   /* optionnel pour arrondir les coins */
+  
+  position: relative;
 }
 
+.video-wrapper video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;   /* rempli le conteneur en rognant si nécessaire */
+}
