@@ -791,7 +791,7 @@ input[type="number"] {
     height: 360px;
   }
 .pc-card img {
-    height: 300px;
+    height: 400px;
 }
 .pc-caption {
     bottom: 14px;
@@ -810,3 +810,4 @@ input[type="number"] {
 }
 
 }
+
