@@ -694,7 +694,7 @@ input[type="number"] {
 .pc-card {
   flex: 0 0 calc(25% - 15px);
   position: relative;
-  height: 450px;                /* contrôle réel de la hauteur */
+  height: 400px;                /* contrôle réel de la hauteur */
   border-radius: 20px;
   overflow: hidden;             /* coupe tout débordement */
   text-decoration: none;
@@ -808,4 +808,5 @@ input[type="number"] {
 .pc-track {
     padding: 20px;
 }
+
 }
