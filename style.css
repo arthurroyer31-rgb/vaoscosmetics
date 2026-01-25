@@ -606,7 +606,7 @@ body {
 /* Image */
 .split-imagefirst img {
   width: 100%;
-  height:650px;
+  height:600px;
   object-fit: cover;
   border-radius: 18px;
   box-shadow: 0 15px 40px rgba(0,0,0,0.15);
@@ -641,7 +641,10 @@ body {
   }
 
   .split-imagefisrt img {
-    height: 250px;
+    height: 10vh;
+    max-height: 100px;
+    width: 100%;
+    object-fit: cover;
     font-size: 1.2rem;
   }
   .split-imagefisrt2 img {
