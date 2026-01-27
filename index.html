@@ -41,51 +41,6 @@
     </a>
   </div>
 </header>
-<section class="split-section fade-in-scroll">
-  <div class="split-textfirst">
-    <p>
-      Nos soins sont formulés pour respecter et sublimer la peau au quotidien.
-Des ingrédients soigneusement sélectionnés, des textures sensorielles et une efficacité visible, pour une routine beauté simple, consciente et agréable.
-
-    </p>
-  </div>
-  <div class="split-imagefirst">
-    <img src="shampoingla.jpeg" alt="Rituel cosmétique">
-  </div>
-    <img src="cheveux.jpeg" alt="Rituel cosmétique" class="floating-image">
-</section>
-
-<section class="two-images fade-in-scroll">
-  
-    <img src="exh.jpeg" alt="Ingrédients premium">
-    <img src="exfolianth.jpg" alt="ingredients premium">
-    <img src="home.jpeg" alt="Ingrédients premium">
-  
-</section>
-
-<section class="split-section reverse fade-in-scroll">
-  <div class="split-textfirst2">
-    <h2>Rituel Sensoriel</h2>
-    <p>
-      Une expérience unique, pensée comme un rituel de soin quotidien,
-      entre science et plaisir.
-    </p>
-  </div>
-  <div class="split-imagefirst2">
-    <img src="granule.png" alt="Rituel cosmétique">
-  </div>
-</section>
-<script>
-document.querySelectorAll('.dropdown > a').forEach(link => {
-    link.addEventListener('click', function(e) {
-        const menu = this.nextElementSibling;
-        if(menu && menu.classList.contains('dropdown-menu')) {
-            e.preventDefault(); // empêche de suivre le lien
-            menu.classList.toggle('active'); // ouvre/ferme le menu
-        }
-    });
-});
-</script>
 <section class="product-carousel">
 
   <button class="pc-arrow left">&#10094;</button>
@@ -110,7 +65,7 @@ document.querySelectorAll('.dropdown > a').forEach(link => {
       </a>
 
       <a href="exfoliant.html" class="pc-card">
-        <img src="ex.jpeg" alt="Produit 3">
+        <img src="baume.png" alt="Produit 3">
         <div class="pc-caption">
           <h3>Exfoliants</h3>
           <p>7,50€</p>
@@ -118,7 +73,7 @@ document.querySelectorAll('.dropdown > a').forEach(link => {
       </a>
 
       <a href="exvisage.html" class="pc-card">
-        <img src="exfoliantv.png" alt="Produit 4">
+        <img src="shampoing.png" alt="Produit 4">
         <div class="pc-caption">
           <h3>Exfoliants visage</h3>
           <p>18,00€</p>
@@ -126,7 +81,7 @@ document.querySelectorAll('.dropdown > a').forEach(link => {
       </a>
 
       <a href="baumesalevres.html" class="pc-card">
-        <img src="baume1.jpeg" alt="Produit 5">
+        <img src="baume2.png" alt="Produit 5">
         <div class="pc-caption">
           <h3>Baume</h3>
           <p>8,00€</p>
@@ -139,6 +94,53 @@ document.querySelectorAll('.dropdown > a').forEach(link => {
 
   <button class="pc-arrow right">&#10095;</button>
 </section>
+<section class="split-section fade-in-scroll">
+  <div class="split-textfirst">
+    <h2>Skin Care</h2>
+    <p>
+      Nos soins sont formulés pour respecter et sublimer la peau au quotidien.
+Des ingrédients soigneusement sélectionnés, des textures sensorielles et une efficacité visible, pour une routine beauté simple, consciente et agréable.
+
+    </p>
+  </div>
+  <div class="split-imagefirst">
+    <img src="shampoingla.jpeg" alt="Rituel cosmétique">
+  </div>
+    <img src="exvis.JPG" alt="Rituel cosmétique" class="floating-image">
+</section>
+
+<section class="two-images fade-in-scroll">
+  
+    <img src="exfoliant.jpg" alt="Ingrédients premium">
+    <img src="exhome.jpeg" alt="ingredients premium">
+    <img src="home.jpeg" alt="Ingrédients premium">
+  
+</section>
+
+<section class="split-section reverse fade-in-scroll">
+  <div class="split-textfirst2">
+    <h2>Rituel Sensoriel</h2>
+    <p>
+      Une expérience unique, pensée comme un rituel de soin quotidien,
+      entre science et plaisir.
+    </p>
+  </div>
+  <div class="split-imagefirst2">
+    <img src="naturel.jpeg" alt="Rituel cosmétique">
+  </div>
+</section>
+<script>
+document.querySelectorAll('.dropdown > a').forEach(link => {
+    link.addEventListener('click', function(e) {
+        const menu = this.nextElementSibling;
+        if(menu && menu.classList.contains('dropdown-menu')) {
+            e.preventDefault(); // empêche de suivre le lien
+            menu.classList.toggle('active'); // ouvre/ferme le menu
+        }
+    });
+});
+</script>
+
 <script>
 const carousel = document.querySelector('.product-carousel');
 const track = carousel.querySelector('.pc-track');

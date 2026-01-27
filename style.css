@@ -12,7 +12,7 @@ html, body {
 }
 body {
     margin: 0;
-    background: #efe7da;
+    background: #979086;
     font-family: 'Roboto', sans-serif;
     color: #333;
 }
@@ -30,7 +30,7 @@ body {
 }
 
 .cart-icon:hover {
-    color: #c28b6b;
+    color: #1e1d1d;
     transform: scale(1.1);
 }
 
@@ -66,7 +66,7 @@ body {
     display: flex;
     align-items: center;
     padding: 20px;
-    color: #584738;
+    color: #1e1d1d;
     font-family: 'Cormorant Garamond', serif;
     flex-direction: column;
     justify-content: flex-start;
@@ -121,7 +121,7 @@ body {
   font-family: 'Cormorant Garamond', serif;
   font-size: clamp(1.6rem, 5vw, 2.5rem);
   font-weight: 700;
-  color: #584738;
+  color: #1e1d1d;
   margin: 0;
   white-space: nowrap;
   overflow: hidden;
@@ -174,7 +174,7 @@ body {
 
 .nav-links a {
     text-decoration: none;
-    color: #584738;
+    color: #1e1d1d;
     font-weight: 700;
     padding: 8px 12px;
     display: block;
@@ -199,7 +199,7 @@ body {
 
 .dropdown-menu li a {
     padding: 10px 20px;
-    color: #584738;
+    color: #979086;
     font-weight: 700;
     font-size: clamp(0.2rem, 5vw, 1.25rem);
 }
@@ -217,8 +217,8 @@ body {
 }
 
 .dropdown-menu li a:hover {
-    background-color: #584738;
-    color: #b88f6f;
+    background-color: #1e1d1d;
+    color: #979086;
 }
 
 /* =====================
@@ -323,7 +323,7 @@ body {
 }
 
 .contact button {
-    background: #c28b6b;
+    background: #1e1d1d;
     color: white;
     border: none;
     padding: 12px;
@@ -364,8 +364,8 @@ body {
 .carousel-slide img {
     width: 100%;
     height: auto;        /* hauteur s'adapte au ratio de l'image */
-  display: block;
-  object-fit: contain;  /* l'image garde son ratio sans couper */
+   display: block;
+   object-fit: contain;  /* l'image garde son ratio sans couper */
 }
 
 .carousel-caption {
@@ -439,7 +439,12 @@ body {
         font-size: 1.5rem;
         padding: 8px;
     }
+    .carousel{
+      max-width: 300px;
+      height: 100%;
+    }
 }
+    
 .carousel * {
     pointer-events: auto;
 }
@@ -481,7 +486,7 @@ body {
 .split-section {
   display: flex;
   grid-template-columns: 1fr 1fr 1fr;
-  gap: 60px;
+  gap: 50px;
   align-items: center;
   max-width: 1400px;
   margin: 50px auto;
@@ -518,21 +523,23 @@ body {
   font-family: 'Cormorant Garamond', serif;
   font-size: 2.4rem;
   font-weight: 500;
-  color: #584738;
-  margin-bottom: 20px;
+  color: #979086;
+  margin-bottom: 2px;
+  margin-top: 2px;
 }
 .split-textfirst2 h2 {
   font-family: 'Cormorant Garamond', serif;
   font-size: 2.4rem;
   font-weight: 500;
-  color: #584738;
+  color: #979086;
   margin-bottom: 5px;
+  margin-top: 5px;
 }
 .split-text1 h2 {
   font-family: 'Cormorant Garamond', serif;
   font-size: 2.4rem;
   font-weight: 500;
-  color: #584738;
+  color: #1e1d1d;
   margin-bottom: 20px;
 }
 
@@ -540,7 +547,7 @@ body {
   font-size: clamp(1.05rem, 5vw, 1.8rem);
   font-weight: 700;
   line-height: 1.8;
-  color: #584738;
+  color: #979086;
   max-width: 1000px;
   font-family: 'Cormorant Garamond', serif;
 }
@@ -548,14 +555,14 @@ body {
   font-size: clamp(1.05rem, 5vw, 1.8rem);
   font-weight: 700;
   line-height: 1.8;
-  color: #584738;
+  color: #979086;
   max-width: 600px;
   font-family: 'Cormorant Garamond', serif;
 }
 .split-text1 p {
   font-size: clamp(1.05rem, 5vw, 1.15rem);
   line-height: 1.8;
-  color: #584738;
+  color: #1e1d1d;
   max-width: 480px;
   font-family: 'Cormorant Garamond', serif;
 }
@@ -563,19 +570,21 @@ body {
   position: absolute;          /* 🔥 OBLIGATOIRE */
   right: 25%;
   width: 40%;
-  background: rgb(171, 159, 141);
+  background: #6a5d52;
   padding: 50px;
   box-shadow: 0 20px 40px rgba(0,0,0,0.1);
   z-index: 2;
+  border-radius: 10px;
 }
 .split-textfirst2 {
   position: absolute;          /* 🔥 OBLIGATOIRE */
-  right: 50%;
+  right: 52%;
   width: 40%;
-  background: rgb(235, 224, 201);
+  background: #312e2e;
   padding: 50px;
   box-shadow: 0 20px 40px rgba(0,0,0,0.1);
   z-index: 2;
+  border-radius: 10px;
 }
 @media (max-width: 1200px) {
   .split-textfisrt {
@@ -594,7 +603,7 @@ body {
   font-size: clamp(1rem, 5vw, 1.5rem);
   font-weight: 700;
   line-height: 1.2;
-  color: #584738;
+  color: #979086;
   max-width: 1000px;
   font-family: 'Cormorant Garamond', serif;
  }
@@ -602,7 +611,7 @@ body {
   font-size: clamp(1.05rem, 5vw, 2rem);
   font-weight: 700;
   line-height: 1.2;
-  color: #584738;
+  color: #979086;
   max-width: 1000px;
   font-family: 'Cormorant Garamond', serif;
  }
@@ -614,20 +623,20 @@ body {
   .split-textfirst {
     position: relative;
     transform: none;
-    bottom: -4vh;
-    left: 15%;
+    bottom: -5vh;
+    left: 20%;
     margin: -40px auto 0;
-    max-width: 50%;
-    width: 50%;
+    max-width: 900%;
+    width: 85%;
     padding: 10px;
-    max-height: 20%;
-    height: 20vh;
+    max-height: 30%;
+    height: 25vh;
   }
   .split-textfirst2 {
     position: relative;
     transform: none;
-    top: auto;
-    right: 15%;
+    top: 4vh;
+    right: 5%;
     margin: -40px auto 0;
     max-width: 100%;
     padding: 10px;
@@ -638,7 +647,7 @@ body {
 }
 /* Image */
 .split-imagefirst {
-  width: 60%;
+  width: 80%;
 }
 .split-imagefirst2 {
   width: 60%;
@@ -656,7 +665,7 @@ body {
   right: 5%;
   bottom: -30px;
 
-  width: 50%;
+  width: 40%;
   height: 500px;
 
   object-fit: cover;
@@ -683,8 +692,8 @@ body {
 @media (max-width: 768px) {
   .split-section {
     grid-template-columns: 1fr 1fr;
-    gap: 10px;
-    margin: 50px auto;
+    gap: 00px;
+    margin: 00px auto;
     max-width: 800px;
   }
   .split-section1 {
@@ -702,7 +711,7 @@ body {
   }
   .floating-image {
     position: absolute;
-    right: 48%;
+    right: 45%;
     bottom: -20px;
 
     width:50%;
@@ -735,6 +744,12 @@ body {
     font-size: clamp(0.5rem,5vw, 0.85rem);
     font-weight: 900px;
   }
+  .split-textfirst h2{
+    max-width: 100%;
+    font-size: 1.5rem;
+    font-weight: 900px;
+  }
+    
   .split-textfirst2 h2{
     max-width: 100%;
     font-size: 1.5rem;
@@ -808,7 +823,7 @@ input[type="number"] {
 .product-carousel {
   position: relative;
   width: 100vw;
-  margin: 80px auto;
+  margin: 10px auto;
   max-width: 100%;
   overflow: visible;          /* cache le débordement */
   background: rgba(255, 0, 0, 0);
