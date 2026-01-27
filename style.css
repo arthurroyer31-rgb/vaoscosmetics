@@ -441,7 +441,8 @@ body {
     }
     .carousel{
       max-width: 300px;
-      height: 100%;
+      height: 80%;
+      width: 80%;
     }
 }
     
@@ -985,4 +986,5 @@ input[type="number"] {
   width: 100%;
   height: 100%;
   object-fit: cover;   /* rempli le conteneur en rognant si nécessaire */
+
 }
