@@ -41,20 +41,21 @@
 
     .product-info h2 {
       font-size: 2rem;
-      color: #584738;
+      color: #4e4949;
       margin: 0;
     }
 
     .product-info p {
       font-size: 1.1rem;
-      color: #666;
+      color: #1e1d1d;
       line-height: 1.6;
+      text-align: justify;
     }
 
     .product-info .price {
       font-size: 1.5rem;
       font-weight: bold;
-      color: #c28b6b;
+      color: #4e4949;
     }
 
     .product-info input[type="number"] {
@@ -65,7 +66,7 @@
     }
 
     .product-info button {
-      background: #c28b6b;
+      background: #4e4949;
       color: white;
       border: none;
       padding: 12px 20px;
@@ -81,7 +82,7 @@
     }
     button#add-to-cart {
         margin-top: 20px;
-        background: #c28b6b;
+        background: #4e4949;
         color: white;
         border: none;
         padding: 12px 24px;
@@ -91,13 +92,13 @@
     }
 
     button#add-to-cart:hover {
-        background: #a56f54;
+        background: #6a5d52;
     }
     .toast {
         position: fixed;
         bottom: 30px;
         right: 30px;
-        background: #584738;
+        background: #4e4949;
         color: white;
         padding: 14px 22px;
         border-radius: 30px;
@@ -117,7 +118,7 @@
     
 
     .product-info button:hover {
-      background: #a56f54;
+      background: #6a5d52;
     }
 
     @media (max-width: 768px) {
@@ -149,10 +150,11 @@
           <li class="dropdown">
             <a>Nos Produits</a>
               <ul class="dropdown-menu">
-                <li><a href="exfoliant.html">Notres Gamme d'Exfoliants</a></li>
-                <li><a href="exvisage.html">Notre Gamme d'Exfoliants visage</a></li>
+                <li><a href="exfoliant.html">Notre Gamme d'Exfoliants à Lèvres</a></li>
                 <li><a href="baumesalevres.html">Notre Gamme de Baumes à Lèvres</a></li>
-                <li><a href="shamp.html">Notre Gamme de Shampoings</a></li>              </ul>
+                <li><a href="shamp.html">Notre Gamme de Shampoings</a></li>
+                <li><a href="exvisage.html">Notre Exfoliant visage</a></li>
+              </ul>
           </li>
         <li><a href="aboutus.html">About us</a></li>
         <li><a href="#contact">Contact</a></li>
@@ -216,9 +218,20 @@
   <div class="product-info">
     <h2>Shampoing au Yuzu et à la Fleur de Sureau</h2>
     <p>
-      Cet exfoliant lèvres offre une exfoliation douce et apaisante, idéale pour lisser les lèvres sèches ou fragilisées. Sa formule d’origine naturelle, enrichie en actifs végétaux et grains exfoliants fins, aide à adoucir et à protéger les lèvres. L’alliance de la pomme fruitée et de la camomille apaisante enveloppe les lèvres d’un parfum délicat et réconfortant. Les lèvres sont souples, lisses et parfaitement préparées pour l’application d’un soin nourrissant.
-    </p>
-    <div class="price">25,00 €</div>
+Éveillez vos sens et réveillez votre chevelure avec notre shampoing solide au yuzu, enrichi en céramides et huile de jojoba. Sa formule douce nettoie et répare vos cheveux en profondeur, laissant votre cuir chevelu équilibré et vos cheveux soyeux, brillants et délicatement parfumés.
+
+
+
+ Naturel et zéro déchet – sans sulfates agressifs ni silicones.
+
+ Yuzu pour stimuler et tonifier le cuir chevelu.
+
+ Céramides et huile de jojoba pour nourrir, protéger et réparer les cheveux secs ou abîmés.
+
+
+
+Offrez à vos cheveux un moment de fraîcheur et de vitalité, tout en prenant soin d’eux en profondeur.    </p>
+    <div class="price">15,00 €/50g</div>
     <div>
       Quantité: <input type="number" value="1" min="1" id="qty">
     </div>
@@ -241,7 +254,7 @@ document.getElementById('add-to-cart').addEventListener('click', () => {
 
   const product = {
     name: "Shampoing au Yuzu/Fleur de Sureau",
-    price: 25.00,
+    price: 15.00,
     qty: qty,
     img: "shampoing.png"
   };

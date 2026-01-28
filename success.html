@@ -2,7 +2,7 @@
 <html lang="fr">
 <head>
   <meta charset="UTF-8">
-  <title>Exfoliants à Lèvres - VAOSCOSMETICS</title>
+  <title>Baume à Lèvres - VAOSCOSMETICS</title>
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600;700&display=swap" rel="stylesheet">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="style.css">
@@ -73,47 +73,6 @@
       font-size: 1rem;
       width: fit-content;
     }
-    input[type="number"] {
-        width: 60px;
-        padding: 6px;
-        font-size: 1rem;
-    }
-    button#add-to-cart {
-        margin-top: 20px;
-        background: #4e4949;
-        color: white;
-        border: none;
-        padding: 12px 24px;
-        border-radius: 25px;
-        font-size: 1rem;
-        cursor: pointer;
-    }
-
-    button#add-to-cart:hover {
-        background: #6a5d52;
-    }
-    .toast {
-        position: fixed;
-        bottom: 30px;
-        right: 30px;
-        background: #4e4949;
-        color: white;
-        padding: 14px 22px;
-        border-radius: 30px;
-        font-size: 0.95rem;
-        font-weight: 500;
-        opacity: 0;
-        pointer-events: none;
-        transform: translateY(20px);
-        transition: all 0.4s ease;
-        z-index: 9999;
-    }
-
-    .toast.show {
-        opacity: 1;
-        transform: translateY(0);
-    }
-    
 
     .product-info button:hover {
       background: #6a5d52;
@@ -138,6 +97,7 @@
         <img src="vaos.png" alt="fond3.jpg">
     </div>
     <div class="titre">
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <h1>VAOSCOSMETICS</h1>
     </div>
     </div>
@@ -164,12 +124,12 @@
   </div>
 </header>
 
-<div class="product-page fade-in-scroll">
-  <section class="carousel">
+<div class="product-page">
+  <section class="carousel fade-in-scroll">
     <div class="carousel-container">
         <div class="carousel-slide">
             <img src="exfoliant.jpg" alt="Produit 1">
-            <div class="carousel-caption">Exfoliant à Lèvres Pomme Camomille</div>
+            <div class="carousel-caption">Baume à Lèvres Poire Jasmin</div>
         </div>
         <div class="carousel-slide">
             <img src="creme.jpg" alt="Produit 2">
@@ -218,16 +178,18 @@
   updateCarousel();
 });
     </script>
-  <div class="product-info">
-    <h2>Exfoliant à Lèvres Pomme camomille</h2>
+  <div class="product-info fade-in-scroll">
+    <h2>Baume à Lèvres Poire jasmin</h2>
     <p>
-      Cet exfoliant lèvres offre une exfoliation douce et apaisante, idéale pour lisser les lèvres sèches ou fragilisées. Sa formule d’origine naturelle, enrichie en actifs végétaux et grains exfoliants fins, aide à adoucir et à protéger les lèvres. L’alliance de la pomme fruitée et de la camomille apaisante enveloppe les lèvres d’un parfum délicat et réconfortant. Les lèvres sont souples, lisses et parfaitement préparées pour l’application d’un soin nourrissant.
+      Soin nourrissant et intensément hydratant, ce baume à lèvres enveloppe les lèvres d’un voile de douceur tout en les protégeant durablement du dessèchement. Sa formule d’origine naturelle, enrichie en actifs végétaux soigneusement sélectionnés, nourrit en profondeur et restaure le confort des lèvres, même les plus sèches.
+      Son parfum délicat de jasmin et de poire offre une expérience sensorielle raffinée, alliant la fraîcheur fruitée de la poire à l’élégance florale du jasmin. Les lèvres sont souples, lisses et subtilement parfumées, sans effet collant.
+
     </p>
-    <div class="price">7,00 €</div>
+    <div class="price">8,00 €</div>
     <div>
       Quantité: <input type="number" value="1" min="1" id="qty">
     </div>
-    <button id="add-to-cart">Ajouter au panier</button>   
+    <button id="add-to-cart">Ajouter au panier</button>
   </div>
 </div>
 
@@ -245,8 +207,8 @@ document.getElementById('add-to-cart').addEventListener('click', () => {
   let cart = JSON.parse(localStorage.getItem('cart')) || [];
 
   const product = {
-    name: "Exfoliant à Lèvres Pomme Camomille",
-    price: 7,
+    name: "Baume à Lèvres Poire Jasmin",
+    price: 8,
     qty: qty,
     img: "exfoliant.jpg"
   };
@@ -272,6 +234,10 @@ document.getElementById('add-to-cart').addEventListener('click', () => {
 </form>
 
 </section>
+
+<footer class="footer">
+  <p>© 2026 VAOSCOSMETICS – Tous droits réservés</p>
+</footer>
 <script>document.querySelectorAll('.dropdown > a').forEach(link => {
     link.addEventListener('click', function(e) {
         const menu = this.nextElementSibling;
@@ -281,10 +247,16 @@ document.getElementById('add-to-cart').addEventListener('click', () => {
         }
     });
 });
+</script><script>document.querySelectorAll('.dropdown > a').forEach(link => {
+    link.addEventListener('click', function(e) {
+        const menu = this.nextElementSibling;
+        if(menu && menu.classList.contains('dropdown-menu')) {
+            e.preventDefault(); // empêche de suivre le lien
+            menu.classList.toggle('active'); // ouvre/ferme le menu
+        }
+    });
+});
 </script>
-<footer class="footer">
-  <p>© 2026 VAOSCOSMETICS – Tous droits réservés</p>
-</footer>
 <script>
 // JS pour activer l'effet sur tous les éléments
 const faders = document.querySelectorAll('.fade-in-scroll');

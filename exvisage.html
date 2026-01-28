@@ -1,15 +1,138 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600;700&display=swap" rel="stylesheet">
   <meta charset="UTF-8">
-  <title>VAOSCOSMETICS</title>
+  <title>Baume à Lèvres - VAOSCOSMETICS</title>
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600;700&display=swap" rel="stylesheet">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="style.css">
-  <script src="java" defer></script>
-</head>
+  <style>
+    /* ===== PRODUIT PAGE ===== */
+    .product-page {
+      max-width: 1000px;
+      margin: 50px auto;
+      padding: 0 20px;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 40px;
+      align-items: flex-start;
+    }
 
+    .product-image {
+      flex: 1;
+      min-width: 300px;
+    }
+
+    .product-image img {
+      width: 100%;
+      border-radius: 12px;
+      object-fit: cover;
+    }
+
+    .product-info {
+      flex: 1;
+      min-width: 300px;
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+      font-family: 'Cormorant Garamond', serif;
+    }
+
+    .product-info h2 {
+      font-size: 2rem;
+      color: #4e4949;
+      margin: 0;
+    }
+
+    .product-info p {
+      font-size: 1.1rem;
+      color: #1e1d1d;
+      line-height: 1.6;
+    }
+
+    .product-info .price {
+      font-size: 1.5rem;
+      font-weight: bold;
+      color: #4e4949;
+    }
+
+    .product-info input[type="number"] {
+      width: 60px;
+      padding: 5px;
+      border-radius: 5px;
+      border: 1px solid #ccc;
+    }
+
+    .product-info button {
+      background: #4e4949;
+      color: white;
+      border: none;
+      padding: 12px 20px;
+      border-radius: 20px;
+      cursor: pointer;
+      font-size: 1rem;
+      width: fit-content;
+    }
+    input[type="number"] {
+        width: 60px;
+        padding: 6px;
+        font-size: 1rem;
+    }
+    button#add-to-cart {
+        margin-top: 20px;
+        background: #4e4949;
+        color: white;
+        border: none;
+        padding: 12px 24px;
+        border-radius: 25px;
+        font-size: 1rem;
+        cursor: pointer;
+    }
+
+    button#add-to-cart:hover {
+        background: #6a5d52;
+    }
+    .toast {
+        position: fixed;
+        bottom: 30px;
+        right: 30px;
+        background: #4e4949;
+        color: white;
+        padding: 14px 22px;
+        border-radius: 30px;
+        font-size: 0.95rem;
+        font-weight: 500;
+        opacity: 0;
+        pointer-events: none;
+        transform: translateY(20px);
+        transition: all 0.4s ease;
+        z-index: 9999;
+    }
+
+    .toast.show {
+        opacity: 1;
+        transform: translateY(0);
+    }
+    
+
+    .product-info button:hover {
+      background: #6a5d52;
+    }
+
+    @media (max-width: 768px) {
+      .product-page {
+        flex-direction: column;
+        align-items: center;
+      }
+      .product-info {
+        width: 100%;
+      }
+    }
+  </style>
+</head>
 <body>
+
 <header class="header">
   <div class="header-top">
     <div class="logo">
@@ -26,10 +149,10 @@
           <li class="dropdown">
             <a>Nos Produits</a>
               <ul class="dropdown-menu">
-                <li><a href="exfoliant.html">Notres Gamme d'Exfoliants</a></li>
-                <li><a href="exvisage.html">Notre Gamme d'Exfoliants visage</a></li>
+                <li><a href="exfoliant.html">Notre Gamme d'Exfoliants à Lèvres</a></li>
                 <li><a href="baumesalevres.html">Notre Gamme de Baumes à Lèvres</a></li>
                 <li><a href="shamp.html">Notre Gamme de Shampoings</a></li>
+                <li><a href="exvisage.html">Notre Exfoliant visage</a></li>
               </ul>
           </li>
         <li><a href="aboutus.html">About us</a></li>
@@ -41,34 +164,25 @@
     </a>
   </div>
 </header>
-<div class="carousel-row">
-    <section class="carousel fade-in-scroll">
+
+<div class="product-page fade-in-scroll">
+  <section class="carousel">
     <div class="carousel-container">
         <div class="carousel-slide">
-          <a href="balpoire.html">
-            <img src="exfoliant.jpg" alt="Produit 1">
-            <div class="carousel-caption">Baume à Lèvres Poire Jasmin</div>
-          </a>
+            <img src="potex.png" alt="Produit 1">
+            <div class="carousel-caption">Exfoliant Visage au Charbon Actif</div>
         </div>
         <div class="carousel-slide">
-          <a href="balpoire.html">
-            <img src="exfoliant.jpg" alt="Produit 2">
-          </a>
-        </div>
-        <div class="carousel-slide">
-          <a href="balpoire.html">
-            <img src="exvis.JPG" alt="Produit 2">
-          </a>
-        </div>
-        <div class="carousel-slide">
-          <a href="balpoire.html">
-            <img src="exhomme.jpeg" alt="Produit 2">
-          </a>
-        </div>
-        <div class="carousel-slide">
-          <a href="balpoire.html">
             <img src="creme.jpg" alt="Produit 2">
-          </a>
+        </div>
+        <div class="carousel-slide">
+            <img src="creme.jpg" alt="Produit 2">
+        </div>
+        <div class="carousel-slide">
+            <img src="creme.jpg" alt="Produit 2">
+        </div>
+        <div class="carousel-slide">
+            <img src="creme.jpg" alt="Produit 2">
         </div>
     </div>
     
@@ -105,209 +219,61 @@
   updateCarousel();
 });
     </script>
+  <div class="product-info">
+    <h2>Exfoliant Visage au Charbon Actif</h2>
+    <p>
+Purifiez, nourrissez et éclairez votre teint avec notre exfoliant visage au charbon actif et vitamine E, enrichi en huile de jojoba et beurre de karité. Sa formule douce mais efficace élimine en douceur les impuretés et les cellules mortes, laissant votre peau lisse, éclatante et revitalisée.
 
-    <section class="carousel fade-in-scroll">
-    <div class="carousel-container">
-        <div class="carousel-slide">
-          <a href="balamande.html">
-            <img src="exfoliant.jpg" alt="Produit 1">
-            <div class="carousel-caption">Baume à Lèvres Amande Fleur de Coton</div>
-          </a>
-        </div>
-        <div class="carousel-slide">
-          <a href="balamande.html">
-            <img src="exvis.JPG" alt="Produit 2">
-          </a>
-        </div>
-        <div class="carousel-slide">
-          <a href="balamande.html">
-            <img src="creme.jpg" alt="Produit 2">
-          </a>
-        </div>
-        <div class="carousel-slide">
-          <a href="balamande.html">
-            <img src="creme.jpg" alt="Produit 2">
-          </a>
-        </div>
-        <div class="carousel-slide">
-          <a href="balamande.html">
-            <img src="creme.jpg" alt="Produit 2">
-          </a>
-        </div>
+
+
+ Naturel et respectueux de votre peau – sans parabènes, silicones ni agents agressifs.
+
+Charbon actif pour purifier et détoxifier en profondeur.
+
+ Vitamine E pour protéger et régénérer votre peau.
+
+Jojoba et karité pour nourrir, hydrater et apaiser toutes les peaux, même sensibles.
+
+
+
+Offrez à votre visage un moment de pure douceur et d’éclat naturel. Parce que prendre soin de soi peut aussi être un geste simple, naturel et sensoriel.    </p>
+    <div class="price">20,00 €</div>
+    <div>
+      Quantité: <input type="number" value="1" min="1" id="qty">
     </div>
-    
+    <button id="add-to-cart">Ajouter au panier</button>   
+  </div>
+</div>
 
-    <!-- Flèches -->
-    <button class="prev">&#10094;</button>
-    <button class="next">&#10095;</button>
-    </section>
-    <script>
-    document.querySelectorAll('.carousel').forEach(carousel => {
-  const container = carousel.querySelector('.carousel-container');
-  const slides = carousel.querySelectorAll('.carousel-slide');
-  const prev = carousel.querySelector('.prev');
-  const next = carousel.querySelector('.next');
+<script>
+    /* ===== TOAST ===== */
+function showToast(message) {
+  const toast = document.getElementById("toast");
+  toast.textContent = message;
+  toast.classList.add("show");
+  setTimeout(() => toast.classList.remove("show"), 5000);
+}
+/* ===== PANIER ===== */
+document.getElementById('add-to-cart').addEventListener('click', () => {
+  const qty = parseInt(document.getElementById('qty').value);
+  let cart = JSON.parse(localStorage.getItem('cart')) || [];
 
-  let index = 0;
+  const product = {
+    name: "Exfoliant Visage au Charbon Actif",
+    price: 20,
+    qty: qty,
+    img: "potex.png"
+  };
 
-  function updateCarousel() {
-      slides.forEach((slide, i) => slide.classList.toggle('active', i === index));
-      container.style.transform = `translateX(-${index * 100}%)`;
-  }
+  const index = cart.findIndex(item => item.name === product.name);
+  if (index !== -1) cart[index].qty += qty;
+  else cart.push(product);
 
-  next.addEventListener('click', () => {
-      index = (index + 1) % slides.length;
-      updateCarousel();
-  });
-
-  prev.addEventListener('click', () => {
-      index = (index - 1 + slides.length) % slides.length;
-      updateCarousel();
-  });
-
-  // initialisation
-  updateCarousel();
-});
-    </script>
-
-    <section class="carousel fade-in-scroll">
-    <div class="carousel-container">
-        <div class="carousel-slide">
-          <a href="balpamplemousse.html">
-            <img src="baume.png" alt="Produit 7">
-            <div class="carousel-caption">Baume à Lèvres Pamplemousse Rose</div>
-          </a>
-        </div>
-        <div class="carousel-slide">
-          <a href="balpamplemousse.html">
-            <img src="exvis.JPG" alt="Produit 2">
-          </a>
-        </div>
-        <div class="carousel-slide">
-          <a href="balpamplemousse.html">
-            <img src="creme.jpg" alt="Produit 2">
-          </a>
-        </div>
-        <div class="carousel-slide">
-          <a href="balpamplemousse.html">
-            <img src="creme.jpg" alt="Produit 2">
-          </a>
-        </div>
-        <div class="carousel-slide">
-          <a href="balpamplemousse.html">
-            <img src="creme.jpg" alt="Produit 2">
-          </a>
-        </div>
-    </div>
-    
-
-    <!-- Flèches -->
-    <button class="prev">&#10094;</button>
-    <button class="next">&#10095;</button>
-    </section>
-    <script>
-     document.querySelectorAll('.carousel').forEach(carousel => {
-        const container = carousel.querySelector('.carousel-container');
-        const slides = carousel.querySelectorAll('.carousel-slide');
-        const prev = carousel.querySelector('.prev');
-        const next = carousel.querySelector('.next');
-
-        let index = 0;
-
-        function updateCarousel() {
-            slides.forEach((slide, i) => slide.classList.toggle('active', i === index));
-            container.style.transform = `translateX(-${index * 100}%)`;
-    }
-
-    next.addEventListener('click', () => {
-      index = (index + 1) % slides.length;
-      updateCarousel();
-    });
-
-  prev.addEventListener('click', () => {
-      index = (index - 1 + slides.length) % slides.length;
-      updateCarousel();
-  });
-
-  // initialisation
-  updateCarousel();
-});
-    </script>
-
-    <section class="carousel fade-in-scroll">
-    <div class="carousel-container">
-        <div class="carousel-slide">
-          <a href="balpomme.html">
-            <img src="baume2.png" alt="Produit 7">
-            <div class="carousel-caption">Baume à Lèvres Pomme Camomille</div>
-          </a>
-        </div>
-        <div class="carousel-slide">
-          <a href="balpomme.html">
-            <img src="exvis.JPG" alt="Produit 2">
-          </a>
-        </div>
-        <div class="carousel-slide">
-          <a href="balpomme.html">
-            <img src="exvis.JPG" alt="Produit 2">
-          </a>
-        </div>
-        <div class="carousel-slide">
-          <a href="balpomme.html">
-            <img src="baume1.jpeg" alt="Produit 2">
-          </a>
-        </div>
-        <div class="carousel-slide">
-          <a href="balpomme.html">
-            <img src="coton.jpg" alt="Produit 2">
-          </a>
-        </div>
-    </div>
-    
-
-    <!-- Flèches -->
-    <button class="prev">&#10094;</button>
-    <button class="next">&#10095;</button>
-    </section>
-    <script>
-     document.querySelectorAll('.carousel').forEach(carousel => {
-        const container = carousel.querySelector('.carousel-container');
-        const slides = carousel.querySelectorAll('.carousel-slide');
-        const prev = carousel.querySelector('.prev');
-        const next = carousel.querySelector('.next');
-
-        let index = 0;
-
-        function updateCarousel() {
-            slides.forEach((slide, i) => slide.classList.toggle('active', i === index));
-            container.style.transform = `translateX(-${index * 100}%)`;
-    }
-
-    next.addEventListener('click', () => {
-      index = (index + 1) % slides.length;
-      updateCarousel();
-    });
-
-  prev.addEventListener('click', () => {
-      index = (index - 1 + slides.length) % slides.length;
-      updateCarousel();
-  });
-
-  // initialisation
-  updateCarousel();
-});
-    </script>
-</div>>
-<script>document.querySelectorAll('.dropdown > a').forEach(link => {
-    link.addEventListener('click', function(e) {
-        const menu = this.nextElementSibling;
-        if(menu && menu.classList.contains('dropdown-menu')) {
-            e.preventDefault(); // empêche de suivre le lien
-            menu.classList.toggle('active'); // ouvre/ferme le menu
-        }
-    });
+  localStorage.setItem('cart', JSON.stringify(cart));
+  showToast("Produit ajouté au panier");
 });
 </script>
+<div id="toast" class="toast">Produit ajouté au panier</div>
 <section class="contact fade-in-scroll" id="contact">
   <h2>Contactez-nous</h2>
   <p>Pour toute question ou suggestion, n’hésitez pas à nous écrire.</p>
@@ -318,9 +284,20 @@
   <textarea name="message" placeholder="Message"></textarea>
   <button type="submit">Envoyer</button>
 </form>
+
 </section>
+<script>document.querySelectorAll('.dropdown > a').forEach(link => {
+    link.addEventListener('click', function(e) {
+        const menu = this.nextElementSibling;
+        if(menu && menu.classList.contains('dropdown-menu')) {
+            e.preventDefault(); // empêche de suivre le lien
+            menu.classList.toggle('active'); // ouvre/ferme le menu
+        }
+    });
+});
+</script>
 <footer class="footer">
-  <p>© 2026 PureSkin – Tous droits réservés</p>
+  <p>© 2026 VAOSCOSMETICS – Tous droits réservés</p>
 </footer>
 <script>
 // JS pour activer l'effet sur tous les éléments

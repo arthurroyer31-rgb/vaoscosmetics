@@ -279,12 +279,12 @@ body {
     display: block;
     margin: 10px 0;
     font-size: 18px;
-    color: #c28b6b;
+    color: #6a5d52;
     font-weight: bold;
 }
 
 .product button {
-    background: #c28b6b;
+    background: #6a5d52;
     color: white;
     border: none;
     padding: 10px 20px;
@@ -294,7 +294,7 @@ body {
 }
 
 .product button:hover {
-    background: #a56f54;
+    background: #584738;
 }
 
 /* =====================
@@ -499,7 +499,7 @@ body {
   grid-template-columns: 1fr 1fr;
   gap: 60px;
   align-items: center;
-  max-width: 1400px;
+  max-width: 1200px;
   margin: 50px auto;
   padding: 0 20px;
 }
@@ -518,7 +518,17 @@ body {
 .split-section.reverse1 > * {
   direction: ltr;
 }
-
+.split-section1,
+.split-section.reverse1,
+.product-info {
+  text-align: justify;
+}
+@media (max-width:768){
+  .split-section1,
+  .product {
+    text-align: left;
+  }
+}
 /* Texte */
 .split-textfirst h2 {
   font-family: 'Cormorant Garamond', serif;

@@ -6,6 +6,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600;700&display=swap" rel="stylesheet">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="style.css">
+  <script src="https://js.stripe.com/v3/"></script>
   <style>
     /* --- PANIER CSS --- */
     .cart-container {
@@ -19,7 +20,7 @@
       font-family: 'Cormorant Garamond', serif;
       font-size: 2.5rem;
       margin-bottom: 40px;
-      color: #584738;
+      color: #4e4949;
     }
 
     .cart-items {
@@ -57,7 +58,7 @@
     .cart-item-info h3 {
       margin: 0;
       font-size: 1.2rem;
-      color: #584738;
+      color: #4e4949;
     }
 
     .cart-item-info div {
@@ -74,7 +75,7 @@
     }
 
     .cart-item button.remove {
-      background: #c28b6b;
+      background: #4e4949;
       color: white;
       border: none;
       padding: 8px 15px;
@@ -85,7 +86,7 @@
     }
 
     .cart-item button.remove:hover {
-      background: #a56f54;
+      background: #6a5d52;
     }
 
     .cart-total {
@@ -93,17 +94,27 @@
       margin-top: 20px;
       font-size: 1.5rem;
       font-weight: bold;
-      color: #584738;
+      color: #4e4949;
     }
 
     /* Responsive */
     @media (max-width: 768px) {
       .cart-item {
         flex-direction: column;
-        align-items: flex-start;
+        align-items: center;
+        padding: 12px;        /* moins d’espace interne */
+        gap: 10px;            /* réduit l’espace entre éléments */
+        border-radius: 10px;
+
+      }
+      .cart-container {
+        max-width: 50%;
+        margin: 50px auto;
+        padding: 0 20px;
+        height: 50%;
       }
       .cart-item-img {
-        width: 100%;
+        width: 80%;
         height: auto;
       }
       .cart-item-info {
@@ -113,6 +124,48 @@
         text-align: center;
       }
     }
+    .cart-actions {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 30px;
+}
+
+.checkout-btn {
+  background: #584738;
+  color: white;
+  text-decoration: none;
+  padding: 14px 28px;
+  border-radius: 30px;
+  font-size: 1rem;
+  font-weight: 600;
+  transition: all 0.3s ease;
+}
+
+.checkout-btn:hover {
+  background: #3f3328;
+  transform: translateY(-2px);
+}
+.cart-actions {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 30px;
+}
+
+.checkout-btn {
+  background: #584738;
+  color: white;
+  text-decoration: none;
+  padding: 14px 28px;
+  border-radius: 30px;
+  font-size: 1rem;
+  font-weight: 600;
+  transition: all 0.3s ease;
+}
+
+.checkout-btn:hover {
+  background: #3f3328;
+  transform: translateY(-2px);
+}
   </style>
 </head>
 <body>
@@ -134,10 +187,11 @@
           <li class="dropdown">
             <a>Nos Produits</a>
               <ul class="dropdown-menu">
-                <li><a href="exfoliant.html">Notres Gamme d'Exfoliants</a></li>
-                <li><a href="exvisage.html">Notre Gamme d'Exfoliants visage</a></li>
+                <li><a href="exfoliant.html">Notre Gamme d'Exfoliants à Lèvres</a></li>
                 <li><a href="baumesalevres.html">Notre Gamme de Baumes à Lèvres</a></li>
-                <li><a href="shamp.html">Notre Gamme de Shampoings</a></li>              </ul>
+                <li><a href="shamp.html">Notre Gamme de Shampoings</a></li>
+                <li><a href="exvisage.html">Notre Exfoliant visage</a></li>
+              </ul>
           </li>
         <li><a href="aboutus.html">About us</a></li>
         <li><a href="#contact">Contact</a></li>
@@ -155,13 +209,15 @@
   <div class="cart-total">Total : <span class="total">0.00 €</span></div>
 </div>
 
+
+<button id="checkout-button">Passer au paiement</button>
+<script src="https://js.stripe.com/v3/"></script>
 <script>
-  // --- PANIER JS ---
+  // --- Rendu du panier ---
   function renderCart() {
     const cartContainer = document.querySelector('.cart-items');
     const cart = JSON.parse(localStorage.getItem('cart')) || [];
     cartContainer.innerHTML = '';
-
     let total = 0;
 
     cart.forEach((item, index) => {
@@ -209,7 +265,38 @@
   }
 
   renderCart();
+
+  // --- Checkout Stripe ---
+  const checkoutButton = document.getElementById('checkout-button');
+  checkoutButton.addEventListener('click', async () => {
+    const cart = JSON.parse(localStorage.getItem('cart') || '[]');
+    if (cart.length === 0) {
+      alert("Votre panier est vide !");
+      return;
+    }
+
+    try {
+      const response = await fetch('http://localhost:4242/create-checkout-session', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ items: cart })
+      });
+
+      if (!response.ok) throw new Error("Erreur lors de la création du paiement");
+      const data = await response.json();
+
+      const stripe = Stripe('pk_test_51SucNjCfhnAslBQd2BNLMuD5s8iaKnQWvmFebgL5ceJhCYzG3cFrmEX2UPSKSGAE3dOIqQVMyWZUDeRIDTSSQexc00WQkqfSV6');
+      const { error } = await stripe.redirectToCheckout({ sessionId: data.id });
+      if (error) alert(error.message);
+    } catch (err) {
+      console.error(err);
+      alert("Erreur lors de la création du paiement");
+    }
+  });
 </script>
+
+
+
 <section class="contact fade-in-scroll" id="contact">
   <h2>Contactez-nous</h2>
   <p>Pour toute question ou suggestion, n’hésitez pas à nous écrire.</p>
